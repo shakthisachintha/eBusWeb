@@ -28,8 +28,10 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   welcome:{
-    fontFamily:'sans-serif',
+    fontFamily:'Roboto',
     textAlign: 'center',
+    color:'white',
+    fontSize:'2.5rem',
       
   },
   image:{
@@ -38,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     position:'fixed',
     
   },
+  signin:{
+    fontFamily:'Roboto',
+  },
 
   button:{
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -45,9 +50,10 @@ const useStyles = makeStyles((theme) => ({
     border: 0,
     color: 'white',
     height: 48,
-    width: "70%",
+    width: "50%",
     padding: '10px 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    marginBottom:'10px',
   }
 }));
 
@@ -68,13 +74,14 @@ export default function SignIn() {
                 padding: '20px 20px',
                 margin: 50,
                 textAlign: 'center',
+                borderRadius:15,
                 
             }}>
               
             <form >
            
                 <Typography variant={'h5'}>
-                <h3> Sign In </h3>
+                <h3 className={classes.signin}> Sign In </h3>
                 </Typography>
                 <TextField
                     variant="outlined"
@@ -82,10 +89,10 @@ export default function SignIn() {
                     required
                     fullWidth
                     id="email"
-                    label="Email Address"
+                    label="Email Address or UserName"
                     name="email"
                     autoComplete="email"
-                    autoFocus
+                    // autoFocus
                 />
 
                 <TextField
@@ -102,7 +109,7 @@ export default function SignIn() {
                 />
                 <Grid item>
                  <FormControlLabel
-                    control={<Checkbox value="remember" className={classes.checkbox}/>}
+                    control={<Checkbox value="remember" color="default"/>}
                     label="Remember me"
                 />
                 </Grid>
@@ -120,12 +127,9 @@ export default function SignIn() {
                 </Grid>
                 <Grid item xs>
                     <Link href="#" variant="body2">
-                    Forgot password?
+                      Forgot password?
                     </Link>
-                </Grid>
-              
-             
-            
+                </Grid>       
                            
             </form>
          </Paper>

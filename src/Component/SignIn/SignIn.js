@@ -8,7 +8,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
-
+import clsx from 'clsx';
+import G3 from  "../images/G3.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,8 +20,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100vw',
     height: '100vh',
     spacing: 0,
-    
-    
+      
   },
   paper: {
     padding: theme.spacing(2),
@@ -32,11 +32,27 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
       
   },
+  image:{
+    height:'150px',
+    width:'200px',
+    position:'fixed',
+    
+  },
+
+  button:{
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    borderRadius: 8,
+    border: 0,
+    color: 'white',
+    height: 48,
+    width: "70%",
+    padding: '10px 30px',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+  }
 }));
 
 export default function SignIn() {
   const classes = useStyles();
-
   return (
     
     <Grid container className={classes.root}>
@@ -44,13 +60,19 @@ export default function SignIn() {
             <Typography component="h1" variant="" className={classes.welcome}>
                Welcome Back To eBus
             </Typography>
+            <Grid item  >
+            <img src={G3} alt="ebus" className={classes.image}/>
+            </Grid>
+            
             <Paper style={{
                 padding: '20px 20px',
                 margin: 50,
                 textAlign: 'center',
+                
             }}>
               
-            <form>
+            <form >
+           
                 <Typography variant={'h5'}>
                 <h3> Sign In </h3>
                 </Typography>
@@ -78,19 +100,17 @@ export default function SignIn() {
                     autoComplete="current-password"
                   
                 />
+                <Grid item>
                  <FormControlLabel
-                    control={<Checkbox value="remember" color="primary" />}
+                    control={<Checkbox value="remember" className={classes.checkbox}/>}
                     label="Remember me"
                 />
-                 <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
-                    className={classes.submit}
-                 >
-                    Sign In
-                </Button>
+                </Grid>
+                <Button className={clsx(classes.button)} 
+                type="submit"
+                variant="contained">
+                 {'Sign In'}
+               </Button>
                 <br></br>
                 <Grid item >
                    Don't have an account?

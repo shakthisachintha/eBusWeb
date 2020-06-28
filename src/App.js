@@ -1,15 +1,12 @@
-import React, { Component } from 'react'  
-import AppBar from '@material-ui/core/AppBar';  
-import Toolbar from '@material-ui/core/Toolbar';   
+import React, { Component } from 'react';
+import SignIn from './Component/SignIn/SignIn';  
+import SignUp from './Component/SignUp/SignUp'; 
+  
 export class App extends Component { 
     render() {  
           return (  
             <div>  
-              <AppBar position="static">  
-                <Toolbar>  
-                 <h3>Welcome to eBus</h3>
-                </Toolbar>  
-              </AppBar>     
+                <SignIn/>  
             </div>  
            )  
        }  

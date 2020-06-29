@@ -70,7 +70,7 @@ export default function ForgotPassword(){
             <form >
                 <Typography>
                     <p>To recover your password, You need to enter correct email address and we will send you a link to reset your password. <br/>
-                    Please check your email and reset the password</p>
+                    Please check your email and reset the password.</p>
                 </Typography>
                 <TextField
                     variant="outlined"

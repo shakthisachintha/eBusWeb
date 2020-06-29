@@ -3,9 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -14,7 +12,10 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import CommuteIcon from '@material-ui/icons/Commute';
-const drawerWidth = 240;
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import G3 from  "../images/G3.png";
+const drawerWidth = 160;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +38,8 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: '#a503fc',
+    // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    background: 'white'
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
@@ -46,6 +48,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
   },
+  card:{
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    marginTop: 20,
+  }
+  
 }));
 
 export default function PermanentDrawerLeft() {
@@ -57,7 +65,9 @@ export default function PermanentDrawerLeft() {
       <AppBar position="fixed" className={classes.appBar}>
         
       </AppBar>
+      
       <Drawer
+      
         className={classes.drawer}
         variant="permanent"
         classes={{
@@ -65,6 +75,15 @@ export default function PermanentDrawerLeft() {
         }}
         anchor="left"
       >
+        <Card className={classes.card}>
+                <CardMedia
+                  component="img"
+                  alt="eBus image"
+                  height="130"
+                  image={G3}
+                  title="eBus image"
+                />
+            </Card>
         <div className={classes.toolbar} />
         
         <List>

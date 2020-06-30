@@ -8,7 +8,6 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import clsx from 'clsx';
 import { Paper } from '@material-ui/core';
-import Link from '@material-ui/core/Link';
 
 
 
@@ -32,15 +31,21 @@ const useStyles = makeStyles((theme) => ({
       fontFamily:'Roboto',
       fontSize:'30px',
     },
+    heading:{
+      fontFamily:'Roboto',
+      fontSize:'30px',
+      textAlign:'center',
+    },
     button:{
         background: '#aa00ff',
         borderRadius: 6,
         border: 0,
         color: 'white',
         height: 40,
-        width: "20%",
+        width: "40%",
         padding: '10px 30px',
         marginBottom:'10px',
+        marginTop:'10px',
       }
   }));
 export default function ForgotPassword(){
@@ -56,10 +61,13 @@ export default function ForgotPassword(){
                
               </Toolbar>
             </AppBar>
+            <Typography className={classes.heading}>
+                <p>Change Password</p>
+            </Typography>
             
             <Paper  style={{
                    padding: '20px 20px',
-                   marginTop: '7%',
+                   marginTop: '3%',
                    marginLeft:'30%',
                    marginRight:'30%',
                    textAlign: 'center',
@@ -70,31 +78,38 @@ export default function ForgotPassword(){
               
             <form >
                 <Typography>
-                    <p>To recover your password, You need to enter correct email address and we will send you a link to reset your password. <br/>
-                    Please check your email and reset the password.</p>
+                  <p>Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter.</p>
                 </Typography>
                 <TextField
                     variant="outlined"
                     margin="normal"
                     required
                     fullWidth
-                    id="email"
-                    label="Enter Email Address"
-                    name="email"
-                    autoComplete="email"
-                    // autoFocus
-                />                
+                    name="password"
+                    label="New Password"
+                    type="password"
+                    id="password"
+                    
+                  
+                />
+                 <TextField
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Confirm Password"
+                    type="password"
+                    id="password"
+                   
+                  
+                />
                 <Button className={clsx(classes.button)} 
                 type="submit"
                 variant="contained">
-                 {'Submit'}
+                 {'Change Password'}
                </Button>
-                <br></br> 
-                <Grid item xs>
-                    <Link href="/resetpassword" variant="body2">
-                      Reset password
-                    </Link>
-                </Grid>               
+                <br></br>             
                            
             </form>
          </Paper>

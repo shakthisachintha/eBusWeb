@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import clsx from 'clsx';
 import { Paper } from '@material-ui/core';
+import Link from '@material-ui/core/Link';
 
 
 
@@ -88,7 +89,12 @@ export default function ForgotPassword(){
                 variant="contained">
                  {'Submit'}
                </Button>
-                <br></br>             
+                <br></br> 
+                <Grid item xs>
+                    <Link href="/resetpassword" variant="body2">
+                      Reset password
+                    </Link>
+                </Grid>               
                            
             </form>
          </Paper>

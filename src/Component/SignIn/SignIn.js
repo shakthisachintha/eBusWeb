@@ -4,6 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
@@ -43,6 +45,14 @@ const useStyles = makeStyles((theme) => ({
   signin:{
     fontFamily:'Roboto',
   },
+  card:{
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    marginTop: 20,
+    height:'150px',
+    width:'200px',
+    position:'fixed',
+  },
 
   button:{
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -66,9 +76,14 @@ export default function SignIn() {
             <Typography component="h1" variant="" className={classes.welcome}>
                Welcome Back To eBus
             </Typography>
-            <Grid item  >
-            <img src={G3} alt="ebus" className={classes.image}/>
-            </Grid>
+            <Card className={classes.card}>
+                <CardMedia
+                  component="img"
+                  alt="eBus image"
+                  image={G3}
+                  title="eBus image"
+                />
+            </Card>
             
             <Paper style={{
                 padding: '20px 20px',

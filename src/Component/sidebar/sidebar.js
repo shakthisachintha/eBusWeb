@@ -83,7 +83,7 @@ export default function PermanentDrawerLeft() {
                   image={G3}
                   title="eBus image"
                 />
-            </Card>
+        </Card>
         <div className={classes.toolbar} />
         
         <List>

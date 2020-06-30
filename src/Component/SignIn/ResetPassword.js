@@ -31,15 +31,21 @@ const useStyles = makeStyles((theme) => ({
       fontFamily:'Roboto',
       fontSize:'30px',
     },
+    heading:{
+      fontFamily:'Roboto',
+      fontSize:'30px',
+      textAlign:'center',
+    },
     button:{
         background: '#aa00ff',
         borderRadius: 6,
         border: 0,
         color: 'white',
         height: 40,
-        width: "20%",
+        width: "40%",
         padding: '10px 30px',
         marginBottom:'10px',
+        marginTop:'10px',
       }
   }));
 export default function ForgotPassword(){
@@ -55,10 +61,13 @@ export default function ForgotPassword(){
                
               </Toolbar>
             </AppBar>
+            <Typography className={classes.heading}>
+                <p>Change Password</p>
+            </Typography>
             
             <Paper  style={{
                    padding: '20px 20px',
-                   marginTop: '7%',
+                   marginTop: '3%',
                    marginLeft:'30%',
                    marginRight:'30%',
                    textAlign: 'center',
@@ -68,7 +77,9 @@ export default function ForgotPassword(){
             }}>
               
             <form >
-                
+                <Typography>
+                  <p>Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter.</p>
+                </Typography>
                 <TextField
                     variant="outlined"
                     margin="normal"
@@ -96,7 +107,7 @@ export default function ForgotPassword(){
                 <Button className={clsx(classes.button)} 
                 type="submit"
                 variant="contained">
-                 {'Confirm'}
+                 {'Change Password'}
                </Button>
                 <br></br>             
                            

@@ -20,11 +20,11 @@ const drawerWidth = 160;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flexGrow: 1,
+    
     backgroundColor: '#a503fc',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100vw',
+    width: '0vw',
     height: '100vh',
     spacing: 0,
   },
@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
     // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    background: 'white'
+    background: 'white',
+    padding: 'fixed'
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
@@ -83,7 +84,7 @@ export default function PermanentDrawerLeft() {
                   image={G3}
                   title="eBus image"
                 />
-          </Card>
+            </Card>
         <div className={classes.toolbar} />
         
         <List>

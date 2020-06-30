@@ -6,10 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import G3 from  "../images/G3.png";
-
+import PermanentDrawerLeft from './../../sidebar/sidebar';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,10 +49,10 @@ const useStyles = makeStyles((theme) => ({
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     borderRadius: 8,
     border: 0,
-    color: 'white',
+    color: 'black',
     height: 48,
     width: "30%",
-    padding: '10px 30px',
+    padding: '20px 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     justifyContent: 'center'
   },
@@ -75,47 +72,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function AddConductor() {
   const classes = useStyles();
 
   return (
     <Grid container className={classes.root}>
+        <PermanentDrawerLeft/>
         <Grid item xs={12} sm={6} >
-        <Typography component="h1" variant="" className={classes.ebus}>
-               eBus 
-        </Typography>
-        <Card className={classes.card}>
-                <CardMedia
-                  component="img"
-                  alt="eBus image"
-                  height="150px"
-                  image={G3}
-                  title="eBus image"
-                />
-        </Card>
+        
             
             <Paper style={
               {
-                padding: '20px 20px',
-                // margin: 50,
+                padding: '20px 50px',
+                margin: 50,
                 textAlign: 'center',
             }}>
 
-              
             <form>
-            {/* <Card className={classes.card}>
-              
-            <CardMedia
-             component="img"
-             alt="eBus image"
-             height="150"
-             image={G3}
-             title="eBus image"
-            />
-            </Card> */}
               
             <Typography component="h2" variant="" className={classes.welcome}>
-               User registration
+               Conductor Registration
             </Typography>
 
             
@@ -208,7 +184,7 @@ export default function SignIn() {
                 <Button className={clsx(classes.button)} 
                 type="submit"
                 variant="contained">
-                 {'Sign Up'}
+                 {'Register'}
                 </Button>
                 </div>
                 <br></br>               

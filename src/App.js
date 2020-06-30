@@ -3,7 +3,7 @@ import SignIn from './Component/SignIn/SignIn';
 import SignUp from './Component/SignUp/SignUp'; 
 import ForgotPassword from './Component/SignIn/ForgotPassword';
 import sidebar from './Component/sidebar/sidebar';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
   
 class App extends Component { 
     render() {  

@@ -6,7 +6,10 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import PermanentDrawerLeft from './../SignIn/SignIn';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import G3 from  "../images/G3.png";
+// import PermanentDrawerLeft from './../sidebar/sidebar';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -15,13 +18,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#a503fc',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100vw',
-    height: '150vh',
+    width: '99vw',
+    height: '125vh',
     spacing: 0,
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 16,
-    padding: '6px 12px',
     border: '1px solid',
     lineHeight: 1.5,
     borderColor: '#0063cc',
@@ -43,9 +45,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily:'Roboto',
     textAlign: 'center',
     color:'white',
-    fontSize:'2.5rem',
-    paddingTop: '1%',  
+    fontSize:'2.5rem'  
   },
+  
   button:{
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     borderRadius: 8,
@@ -58,13 +60,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center'
   },
   image:{
-    height:'150px',
-    width:'200px',
-    paddingTop: '10%',
+    height:'100px',
+    width:'150px',
+    paddingTop: '10%'
     
   },
   card: {
-    maxWidth: 200,
+    maxWidth: '180px',
     backgroundColor: 'transparent',
     boxShadow: 'none',
   },
@@ -82,10 +84,15 @@ export default function SignIn() {
         <Typography component="h1" variant="" className={classes.ebus}>
                eBus 
         </Typography>
-        <Grid item  >
-                {/* <img src={G3} alt="ebus" className={classes.image}/> */}
-                
-        </Grid>
+        <Card className={classes.card}>
+                <CardMedia
+                  component="img"
+                  alt="eBus image"
+                  height="150px"
+                  image={G3}
+                  title="eBus image"
+                />
+        </Card>
             
             <Paper style={
               {
@@ -121,7 +128,6 @@ export default function SignIn() {
                     label="user Name"
                     name="username"
                     autoComplete="User Name"
-                    autoFocus
                 />
 
                 <TextField
@@ -133,7 +139,7 @@ export default function SignIn() {
                     label="Address"
                     name="address"
                     autoComplete="address"
-                    autoFocus
+                    
                 />
 
                 <TextField
@@ -145,7 +151,7 @@ export default function SignIn() {
                     label="NIC Number"
                     name="nic"
                     autoComplete="NIC"
-                    autoFocus
+                    
                 />
 
                 <TextField
@@ -170,7 +176,7 @@ export default function SignIn() {
                     label="Address"
                     name="address"
                     autoComplete="address"
-                    autoFocus
+                   
                 />
 
                 <TextField
@@ -182,7 +188,7 @@ export default function SignIn() {
                     label="Address"
                     name="address"
                     autoComplete="address"
-                    autoFocus
+                    
                 />
 
                 <TextField
@@ -194,7 +200,7 @@ export default function SignIn() {
                     label="Address"
                     name="address"
                     autoComplete="address"
-                    autoFocus
+                    
                 />
                 
                  

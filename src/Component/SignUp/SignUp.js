@@ -36,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   welcome:{
-    fontFamily:'sans-serif',
+    fontFamily:'Roboto',
     textAlign: 'center',
-    
+    fontSize:'1.8rem' 
       
   },
   ebus:{
@@ -115,7 +115,7 @@ export default function SignIn() {
             </Card> */}
               
             <Typography component="h2" variant="" className={classes.welcome}>
-               User registration
+               User Registration
             </Typography>
 
             

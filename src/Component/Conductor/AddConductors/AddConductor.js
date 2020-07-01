@@ -33,9 +33,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   welcome:{
-    fontFamily:'sans-serif',
+    fontFamily:'Roboto',
     textAlign: 'center',
-    
+    fontSize:'1.8rem' 
       
   },
   ebus:{
@@ -104,6 +104,7 @@ export default function AddConductor() {
                     label="user Name"
                     name="username"
                     autoComplete="User Name"
+                    autoFocus
                 />
 
                 <TextField
@@ -139,7 +140,6 @@ export default function AddConductor() {
                     label="Contact Number"
                     name="contact"
                     autoComplete="contact"
-                    autoFocus
                 />
 
                 

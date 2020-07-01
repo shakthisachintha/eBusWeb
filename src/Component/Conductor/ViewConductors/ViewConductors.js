@@ -7,15 +7,17 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import PermanentDrawerLeft from './../../sidebar/sidebar';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     color: theme.palette.common.white,
   },
   body: {
     fontSize: 14,
   },
+
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
@@ -48,7 +50,7 @@ export default function ViewConductor() {
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={classes.Paper}>
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -73,6 +75,7 @@ export default function ViewConductor() {
           ))}
         </TableBody>
       </Table>
+      <PermanentDrawerLeft/>
     </TableContainer>
   );
 }

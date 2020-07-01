@@ -20,7 +20,7 @@ const drawerWidth = 160;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    
+
     backgroundColor: '#a503fc',
     alignItems: 'center',
     justifyContent: 'center',

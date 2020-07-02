@@ -24,10 +24,6 @@ class App extends Component {
                       <Route exact path="/sidebar" component={PermanentDrawerLeft}/>
                       <Route exact path="/profile" component={Profile}/>
                       <Route exact path="/addconductor" component={AddConductor}/>
-
-
-
-
                   </Switch>
               </Router>
           

@@ -3,17 +3,12 @@ import SignIn from './Component/SignIn/SignIn';
 import SignUp from './Component/SignUp/SignUp'; 
 import ForgotPassword from './Component/SignIn/ForgotPassword';
 import PermanentDrawerLeft from './Component/sidebar/sidebar';
-// import sidebar from './Component/sidebar/sidebar';
-
 import AddConductor from './Component/Conductor/AddConductors/AddConductor';
-
-import ViewConductor from './Component/Conductor/ViewConductors/ViewConductors';
+// import ViewConductor from './Component/Conductor/ViewConductors/ViewConductors';
+// import ViewConductorDup from './Component/Conductor/ViewConductors/ViewConductorsDup';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-
-
 import ResetPassword from './Component/SignIn/ResetPassword';
 import Profile from './Component/Profile/Profile';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
   
 class App extends Component { 
@@ -24,20 +19,13 @@ class App extends Component {
                       <Route exact path="/" component={SignIn}/>
                       <Route exact path ="/signup" component ={SignUp}/>
                       <Route exact path="/forgotpassword" component={ForgotPassword}/>
-
-                      <Route exact path="/sidebar" component={sidebar}/>
-                      <Route exact path="/addconductor" component={AddConductor}/
-                      <Route exact path="/viewconductor" component={ViewConductor}/
+                      <Route exact path="/addconductor" component={AddConductor}/>
+                      {/* <Route exact path="/viewconductor" component={ViewConductor}/> */}
                       <Route exact path="/resetpassword" component={ResetPassword}/>
-
                       <Route exact path="/sidebar" component={PermanentDrawerLeft}/>
-                      <Route exact path="/resetpassword" component={ResetPassword}/>
                       <Route exact path="/profile" component={Profile}/>
                       <Route exact path="/addconductor" component={AddConductor}/>
-
-
-
-
+                      {/* <Route exact path="/viewconductordup" component={ViewConductorDup}/> */}
                   </Switch>
               </Router>
           

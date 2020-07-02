@@ -20,7 +20,7 @@ const drawerWidth = 160;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    
+
     backgroundColor: '#a503fc',
     alignItems: 'center',
     justifyContent: 'center',
@@ -84,7 +84,7 @@ export default function PermanentDrawerLeft() {
                   image={G3}
                   title="eBus image"
                 />
-            </Card>
+        </Card>
         <div className={classes.toolbar} />
         
         <List>

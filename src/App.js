@@ -5,7 +5,7 @@ import ForgotPassword from './Component/SignIn/ForgotPassword';
 import sidebar from './Component/sidebar/sidebar';
 import AddConductor from './Component/Conductor/AddConductors/AddConductor';
 import ViewConductor from './Component/Conductor/ViewConductors/ViewConductors';
-// import ViewConductorDup from './Component/Conductor/ViewConductors/ViewConductorsDup';
+import ViewConductorDup from './Component/Conductor/ViewConductors/ViewConductorsDup';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
   
 class App extends Component { 
@@ -19,7 +19,7 @@ class App extends Component {
                       <Route exact path="/sidebar" component={sidebar}/>
                       <Route exact path="/addconductor" component={AddConductor}/>
                       <Route exact path="/viewconductor" component={ViewConductor}/>
-                      {/* <Route exact path="/viewconductordup" component={ViewConductorDup}/> */}
+                      <Route exact path="/viewconductordup" component={ViewConductorDup}/>
                   </Switch>
               </Router>
           

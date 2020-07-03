@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Button, Grid, Paper, TextField, Typography, Avatar,Icon } from '@material-ui/core';
 // import SvgIcon from '@material-ui/core/SvgIcon';
 
+
 class Profile extends Component{
     state = {
         display:false,

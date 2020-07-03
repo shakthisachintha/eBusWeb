@@ -46,6 +46,8 @@ const rows = [
   createData('Cupcake', 305, 3.7, 67, 4.3),
   createData('Gingerbread', 356, 16.0, 49, 3.9),
   createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
 

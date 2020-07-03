@@ -163,7 +163,6 @@ export default function SignIn() {
                     label="Contact Number"
                     name="contact"
                     autoComplete="contact"
-                    autoFocus
                 />
 
                 

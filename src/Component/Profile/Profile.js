@@ -2,13 +2,16 @@ import React, {Component} from 'react';
 import { Button, Grid, Paper, TextField, Typography, Avatar,Icon } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
-// import PermanentDrawerLeft from '../sidebar/sidebar';
-
 class Profile extends Component{
-    state = {
+    constructor(props){
+        super(props);
+    
+    this.state = {
         display:false,
         profileIma :'https://i.ya-webdesign.com/images/profile-photo-png.png',
+        alert_message :'',
     }
+}
     toggleHandler=(e)=>{
     	    e.preventDefault();
         const currentStatus = this.state.display;
@@ -19,7 +22,9 @@ class Profile extends Component{
     
     onSubmit = (e) => {
     e.preventDefault();
+    
     }
+
     imageHandler=(e) =>{
         const reader = new FileReader();
         reader.onload = ()=> {
@@ -149,7 +154,8 @@ class Profile extends Component{
                      <Icon style={{ 
                          fontSize: 15,
                          backgroundColor:'black',
-                         color:'white'}}>+Upload</Icon>
+                         color:'white',
+                         cursor:'pointer'}}>+Upload</Icon>
                      </label>
                  </Grid>
                 </Grid>

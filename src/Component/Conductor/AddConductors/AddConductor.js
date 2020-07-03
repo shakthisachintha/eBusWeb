@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import PermanentDrawerLeft from './../../sidebar/sidebar';
-
+import ResponsiveDrawer from './../../sidebar/siebardup'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -77,7 +77,7 @@ export default function AddConductor() {
 
   return (
     <Grid container className={classes.root}>
-        <PermanentDrawerLeft/>
+        <ResponsiveDrawer/>
         <Grid item xs={12} sm={6} >
         
             

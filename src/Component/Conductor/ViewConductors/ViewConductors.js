@@ -14,6 +14,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import ResponsiveDrawer from './../../sidebar/siebardup'
 
 
 const StyledTableCell = withStyles((theme) => ({
@@ -52,13 +53,13 @@ const rows = [
 
 const useStyles = makeStyles((theme) => ({
   table: {
-    minWidth: 700,
+    minWidth: 1000,
   },
 
   root: {
     flexGrow: 1,
     backgroundColor: '#a503fc',
-    //alignItems: 'center',
+    alignItems: 'center',
     justifyContent: 'center',
     width: '99vw',
     height: '125vh',
@@ -73,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
   paper: {
-    
+    marginTop: 20,
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
@@ -122,56 +123,57 @@ export default function ViewConductor() {
 
   return (
     <Grid container className={classes.root}>
-      <PermanentDrawerLeft />
-      <Grid item xs={12} sm={6} >
+      <ResponsiveDrawer />
+      <Grid item xs={12} sm={10} >
 
 
         <Paper style={
           {
-            padding: '10px 10px',
-            margin: 10,
+            padding: '10px 5px',
+            marginTop:10,
+            margin: 50,
             textAlign: 'center',
           }}>
 
           <form>
 
-            <Typography component="h2" variant="" className={classes.welcome}>
+            {/* <Typography component="h2" variant="" className={classes.welcome}>
               Conductor Registration
-            </Typography>
+            </Typography> */}
 
 
             <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Vitamins&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+              <Table className={classes.table} aria-label="customized table">
+                <TableHead>
+                  <TableRow>
+                    <StyledTableCell>Dessert (100g serving)</StyledTableCell>
+                    <StyledTableCell align="right">Calories</StyledTableCell>
+                    <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
+                    <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
+                    <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+                    <StyledTableCell align="right">Vitamins&nbsp;(g)</StyledTableCell>
+                    <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
+                    <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row) => (
+                    <StyledTableRow key={row.name}>
+                      <StyledTableCell component="th" scope="row">
+                        {row.name}
+                      </StyledTableCell>
+                      <StyledTableCell align="right">{row.calories}</StyledTableCell>
+                      <StyledTableCell align="right">{row.fat}</StyledTableCell>
+                      <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+                      <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                      <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                      <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                      <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                    </StyledTableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
 
 
 

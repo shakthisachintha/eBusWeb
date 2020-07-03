@@ -146,7 +146,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-                  eBus | Conductor Registration
+                  eBus | 
           </Typography>
         </Toolbar>
       </AppBar>

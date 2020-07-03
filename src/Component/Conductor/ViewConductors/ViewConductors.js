@@ -45,6 +45,9 @@ const rows = [
   createData('Eclair', 262, 16.0, 24, 6.0),
   createData('Cupcake', 305, 3.7, 67, 4.3),
   createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
 
@@ -59,8 +62,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: '#a503fc',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'top',
+    // justifyContent: 'center',
     width: '99vw',
     height: '125vh',
     spacing: 0,
@@ -70,18 +73,24 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid',
     lineHeight: 1.5,
     borderColor: '#0063cc',
-
+    paddingTop:'5%'
+    // This determines distance from top
 
   },
   paper: {
     marginTop: 20,
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    opacity: 0.5
   },
   welcome: {
     fontFamily: 'Roboto',
     textAlign: 'center',
-    fontSize: '1.8rem'
+    fontSize: '1.8rem',
+    marginTop: 10,
+    marginBottom: 10
 
   },
   ebus: {
@@ -116,6 +125,10 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: 'black',
   },
+  form: {
+    marginTop: 10,
+    paddingTop: '1%'
+  }
 }));
 
 export default function ViewConductor() {
@@ -127,64 +140,59 @@ export default function ViewConductor() {
       <Grid item xs={12} sm={10} >
 
 
-        <Paper style={
-          {
-            padding: '10px 5px',
-            marginTop:10,
-            margin: 50,
-            textAlign: 'center',
-          }}>
-
-          <form>
-
-            {/* <Typography component="h2" variant="" className={classes.welcome}>
-              Conductor Registration
-            </Typography> */}
 
 
-            <TableContainer component={Paper}>
-              <Table className={classes.table} aria-label="customized table">
-                <TableHead>
-                  <TableRow>
-                    <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-                    <StyledTableCell align="right">Calories</StyledTableCell>
-                    <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-                    <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-                    <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-                    <StyledTableCell align="right">Vitamins&nbsp;(g)</StyledTableCell>
-                    <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
-                    <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {rows.map((row) => (
-                    <StyledTableRow key={row.name}>
-                      <StyledTableCell component="th" scope="row">
-                        {row.name}
-                      </StyledTableCell>
-                      <StyledTableCell align="right">{row.calories}</StyledTableCell>
-                      <StyledTableCell align="right">{row.fat}</StyledTableCell>
-                      <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-                      <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                      <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                      <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                      <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                    </StyledTableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+        <form className={classes.form}>
+
+
+          <Typography component="h2" variant="" className={classes.welcome}>
+            Conductors
+            </Typography>
+
+
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="customized table">
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell>Dessert (100g serving)</StyledTableCell>
+                  <StyledTableCell align="right">Calories</StyledTableCell>
+                  <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell align="right">Vitamins&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <StyledTableRow key={row.name}>
+                    <StyledTableCell component="th" scope="row">
+                      {row.name}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">{row.calories}</StyledTableCell>
+                    <StyledTableCell align="right">{row.fat}</StyledTableCell>
+                    <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                  </StyledTableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
 
 
 
 
 
-            <div>
+          <div>
 
-            </div>
-            <br></br>
-          </form>
-        </Paper>
+          </div>
+          <br></br>
+        </form>
+
       </Grid>
     </Grid>
   );

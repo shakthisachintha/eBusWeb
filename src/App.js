@@ -10,8 +10,6 @@ import ViewConductorDup from './Component/Conductor/ViewConductors/ViewConductor
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ResetPassword from './Component/SignIn/ResetPassword';
 import Profile from './Component/Profile/Profile';
-import Success from './Component/Notification/Success';
-import Error from './Component/Notification/Error';
 import Profiledup from './Component/Profile/Profiledup'
 import ResponsiveDrawer from './Component/sidebar/siebardup'
 
@@ -32,8 +30,6 @@ class App extends Component {
                       <Route exact path="/profiledup" component={Profiledup}/>
                       <Route exact path="/addconductor" component={AddConductor}/>
                       {/* <Route exact path="/viewconductordup" component={ViewConductorDup}/> */}
-                      <Route exact path = "/sucess" component={Success}/>
-                      <Route exact path = "/error" component ={Error}/>
                       <Route exact path="/viewconductordup" component={ViewConductorDup}/>
                       <Route exact path="/sidebardup" component={ResponsiveDrawer}/>
                   </Switch>

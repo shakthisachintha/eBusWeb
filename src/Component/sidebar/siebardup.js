@@ -2,37 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
+// import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import CommuteIcon from '@material-ui/icons/Commute';
+// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+// import CommuteIcon from '@material-ui/icons/Commute';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Link from '@material-ui/core/Link';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import MenuList from '@material-ui/core/MenuList';
-
-
 import Collapse from '@material-ui/core/Collapse';
-
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
+// import DraftsIcon from '@material-ui/icons/Drafts';
+// import SendIcon from '@material-ui/icons/Send';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
-
 import G3 from "../images/G3.png";
 const drawerWidth = 160;
 
@@ -143,7 +135,7 @@ function ResponsiveDrawer(props) {
             {/* <ListItemIcon>
           <SendIcon />
         </ListItemIcon> */}
-            <ListItemText primary="Buses" component={Link} to="/" />
+          <ListItemText primary="Buses" component={Link} to="https://www.google.com/" />
           </ListItem>
           <ListItem button>
             <ListItemText primary="Condutors" />

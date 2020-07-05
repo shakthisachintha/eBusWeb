@@ -20,7 +20,20 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import CommuteIcon from '@material-ui/icons/Commute';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
-import G3 from  "../images/G3.png";
+import Link from '@material-ui/core/Link';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import MenuList from '@material-ui/core/MenuList';
+
+
+import Collapse from '@material-ui/core/Collapse';
+
+import DraftsIcon from '@material-ui/icons/Drafts';
+import SendIcon from '@material-ui/icons/Send';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import StarBorder from '@material-ui/icons/StarBorder';
+
+import G3 from "../images/G3.png";
 const drawerWidth = 160;
 
 
@@ -55,18 +68,26 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
-  card:{
+  card: {
     backgroundColor: 'transparent',
     boxShadow: 'none',
     marginTop: 20,
   },
   title: {
     flexGrow: 1,
-    color:'white',
-    marginTop:'5px',
-    marginLeft:'60px',
-    fontFamily:'Roboto',
-    fontSize:'30px',
+    color: 'white',
+    marginTop: '5px',
+    marginLeft: '60px',
+    fontFamily: 'Roboto',
+    fontSize: '30px',
+  },
+  menu: {
+    width: '90%',
+    maxWidth: 160,
+    backgroundColor: theme.palette.background.paper,
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
   },
 }));
 
@@ -80,15 +101,21 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
   const drawer = (
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
-        
+
       </AppBar>
-      
+
       <Drawer
-      
+
         className={classes.drawer}
         variant="permanent"
         classes={{
@@ -97,35 +124,55 @@ function ResponsiveDrawer(props) {
         anchor="left"
       >
         <Card className={classes.card}>
-                <CardMedia
-                  component="img"
-                  alt="eBus image"
-                  height="130"
-                  image={G3}
-                  title="eBus image"
-                />
+          <CardMedia
+            component="img"
+            alt="eBus image"
+            height="130"
+            image={G3}
+            title="eBus image"
+          />
         </Card>
         <div className={classes.toolbar} />
-        
-        <List>
-          {['Test', 'Test', 'Test', 'Test'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <AccountCircleIcon /> : <CommuteIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+
+        <List
+          component="nav"
+          aria-labelledby="nested-list-subheader"
+          className={classes.menu}
+        >
+          <ListItem button>
+            {/* <ListItemIcon>
+          <SendIcon />
+        </ListItemIcon> */}
+            <ListItemText primary="Buses" component={Link} to="/" />
+          </ListItem>
+          <ListItem button>
+            <ListItemText primary="Condutors" />
+          </ListItem>
+          <ListItem button onClick={handleClick}>
+            <ListItemText primary="Reports" />
+            {open ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItem button className={classes.nested}>
+                <ListItemText primary="Generate Report" />
+              </ListItem>
+              <ListItem button className={classes.nested}>
+                <ListItemText primary="View Report" />
+              </ListItem>
+
+              <ListItem button>
+                <ListItemText primary="Profle" />
+              </ListItem>
+              <ListItem button>
+                <ListItemText primary="Log Out" />
+              </ListItem>
+            </List>
+          </Collapse>
         </List>
-        <Divider />
-        <List>
-          {['Test ', 'Test', 'Test'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+
       </Drawer>
-      
+
     </div>
   );
 
@@ -146,7 +193,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-                  eBus | 
+            eBus |
           </Typography>
         </Toolbar>
       </AppBar>
@@ -220,3 +267,4 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
+

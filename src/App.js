@@ -12,7 +12,6 @@ import ResetPassword from './Component/SignIn/ResetPassword';
 import Profile from './Component/Profile/Profile';
 import Profiledup from './Component/Profile/Profiledup'
 import ResponsiveDrawer from './Component/sidebar/siebardup';
-import MaterialTableDemo from './Component/Profile/table';
 
   
 class App extends Component { 
@@ -33,7 +32,6 @@ class App extends Component {
                       {/* <Route exact path="/viewconductordup" component={ViewConductorDup}/> */}
                       <Route exact path="/viewconductordup" component={ViewConductorDup}/>
                       <Route exact path="/sidebardup" component={ResponsiveDrawer}/>
-                      <Route exact path = "/table" component ={MaterialTableDemo}/>
                   </Switch>
               </Router>
           

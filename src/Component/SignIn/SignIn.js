@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -13,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import clsx from 'clsx';
 import G3 from  "../images/G3.png";
+import {useForm, Controller} from 'react-hook-form';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,6 +70,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
   const classes = useStyles();
+  const{register , handleSubmit,control} = useForm();
+  const onSubmit = data => {
+    console.log(data);
+  };
   return (
     
     <Grid container className={classes.root}>
@@ -94,7 +98,7 @@ export default function SignIn() {
                 
             }}>
               
-            <form >
+            <form onSubmit = {handleSubmit(onSubmit)}>
            
                 <Typography variant={'h5'}>
                 <h3 className={classes.signin}> Sign In </h3>
@@ -102,6 +106,7 @@ export default function SignIn() {
                 <TextField
                     variant="outlined"
                     margin="normal"
+                    inputRef ={register}
                     required
                     fullWidth
                     id="email"
@@ -114,6 +119,7 @@ export default function SignIn() {
                 <TextField
                     variant="outlined"
                     margin="normal"
+                    inputRef ={register}
                     required
                     fullWidth
                     name="password"
@@ -125,7 +131,8 @@ export default function SignIn() {
                 />
                 <Grid item>
                  <FormControlLabel
-                    control={<Checkbox value="remember" color="default"/>}
+                    control={
+                    <Controller as={Checkbox} control={control} name="remember" value="remember" color="default" defaultValue={false}/>}
                     label="Remember me"
                 />
                 </Grid>

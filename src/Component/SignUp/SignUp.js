@@ -10,8 +10,6 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import G3 from  "../images/G3.png";
 
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,

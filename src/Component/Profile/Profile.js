@@ -63,6 +63,7 @@ class Profile extends Component {
                         id="email"
                         label="Email Address or UserName"
                         name="email"
+                        autoFocus
                     />
                     <TextField
                         variant="outlined"

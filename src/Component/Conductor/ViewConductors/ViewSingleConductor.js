@@ -12,7 +12,7 @@ import ResponsiveDrawer from './../../sidebar/siebardup'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#a503fc',
     alignItems: 'center',
     justifyContent: 'center',
     width: '99vw',
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid',
     lineHeight: 1.5,
     borderColor: '#0063cc',
-    paddingTop:'5%'
+    
     
   },
   paper: {
@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AddConductor() {
+export default function ViewSingleConductor() {
   const classes = useStyles();
 
   return (

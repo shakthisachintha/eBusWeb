@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import PermanentDrawerLeft from './../../sidebar/sidebar';
 import MaterialTable from 'material-table';
 
+
+
 const useStyles = makeStyles((theme) => ({
 
     root: {
@@ -83,7 +85,7 @@ export default function ViewConductorDup() {
                         textAlign: 'center',
                     }}>
 
-                    <form>
+                    
 
                         <Typography component="h2" variant="" className={classes.welcome}>
                             View Conductors
@@ -137,7 +139,7 @@ export default function ViewConductorDup() {
                             />
                         </div>
                         <br></br>
-                    </form>
+                    
                 </Paper>
             </Grid>
         </Grid>

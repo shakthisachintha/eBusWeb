@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
+      backgroundColor:'#aa00ff'
     },
   },
   menuButton: {
@@ -111,7 +112,6 @@ function ResponsiveDrawer(props) {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
-
       </AppBar>
 
       <Drawer
@@ -160,15 +160,17 @@ function ResponsiveDrawer(props) {
               <ListItem button className={classes.nested}>
                 <ListItemText primary="View Report" />
               </ListItem>
-
+              </List>
+              </Collapse>
+              <Link href="/profile" variant="body2">
               <ListItem button>
                 <ListItemText primary="Profle" />
               </ListItem>
+              </Link >
               <ListItem button>
                 <ListItemText primary="Log Out" />
               </ListItem>
-            </List>
-          </Collapse>
+           
         </List>
 
       </Drawer>

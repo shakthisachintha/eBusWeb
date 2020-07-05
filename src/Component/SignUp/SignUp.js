@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     width: '99vw',
-    height: '60vh',
+    height: '120vh',
     spacing: 0,
     boxShadow: 'none',
     textTransform: 'none',

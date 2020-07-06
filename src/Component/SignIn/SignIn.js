@@ -34,11 +34,12 @@ class SignIn extends Component{
 
     handleSubmit =(event) =>{
       alert(`${this.state.email} ${this.state.password} Success`)
-      console.log(this.state);
-      this.state({
-        email:"",
-        password:"",
-      })
+      this.props.history.push('/sidebardup');
+      // console.log(this.state);
+      // this.state({
+      //   email:"",
+      //   password:"",
+      // })
       event.preventDefault()
     }
 
@@ -128,6 +129,7 @@ class SignIn extends Component{
                     label="Remember me"
                 />
                 </Grid>
+                {/* <Link href="/sidebardup" variant="body2" underline="none"> */}
                 <Button style={{
                   background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
                   borderRadius: 8,
@@ -143,6 +145,7 @@ class SignIn extends Component{
                 variant="contained">
                  {'Sign In'}
                </Button>
+               {/* </Link> */}
                 <br></br>
                 <Grid item >
                    Don't have an account?

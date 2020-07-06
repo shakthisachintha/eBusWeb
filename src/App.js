@@ -4,13 +4,13 @@ import SignUp from './Component/SignUp/SignUp';
 import ForgotPassword from './Component/SignIn/ForgotPassword';
 import PermanentDrawerLeft from './Component/sidebar/sidebar';
 import AddConductor from './Component/Conductor/AddConductors/AddConductor';
-
 import ViewConductor from './Component/Conductor/ViewConductors/ViewConductors';
 import ViewConductorDup from './Component/Conductor/ViewConductors/ViewConductorsDup';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ResetPassword from './Component/SignIn/ResetPassword';
 import Profile from './Component/Profile/Profile';
-import ResponsiveDrawer from './Component/sidebar/siebardup'
+import ResponsiveDrawer from './Component/sidebar/siebardup';
+import ViewSingleConductor from './Component/sidebar/siebardup'
 
   
 class App extends Component { 
@@ -30,6 +30,7 @@ class App extends Component {
                       <Route exact path="/viewconductordup" component={ViewConductorDup}/>
                       <Route exact path="/viewconductordup" component={ViewConductorDup}/>
                       <Route exact path="/sidebardup" component={ResponsiveDrawer}/>
+                      <Route exact path="/viewsingleconductor" component={ViewSingleConductor}/>
                   </Switch>
               </Router>
           

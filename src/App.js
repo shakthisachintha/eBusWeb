@@ -14,6 +14,10 @@ import Success from './Component/Notification/Success';
 import Error from './Component/Notification/Error';
 import Profiledup from './Component/Profile/Profiledup'
 import ResponsiveDrawer from './Component/sidebar/siebardup'
+import Table from './Component/Layouts/Table'
+import FormDialog from './Component/Layouts/DialogForm'
+import CheckingView from './Component/Layouts/CheckingView'
+import Dashboard from './Component/Dashboard/Dashboard'
 
   
 class App extends Component { 
@@ -36,7 +40,12 @@ class App extends Component {
                       <Route exact path = "/error" component ={Error}/>
                       <Route exact path="/viewconductordup" component={ViewConductorDup}/>
                       <Route exact path="/sidebardup" component={ResponsiveDrawer}/>
-                  </Switch>
+                      <Route exact path="/table" component ={Table}/>
+                      <Route exact path="/formDialog" component={FormDialog}/>
+                      <Route exact path="/checkView" component={CheckingView}/>
+                      <Route exact path="/dashboard" component={Dashboard}/>
+
+                   </Switch>
               </Router>
           
            )  

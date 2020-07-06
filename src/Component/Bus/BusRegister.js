@@ -99,10 +99,10 @@ export default function AddConductor() {
                     margin="normal"
                     required
                     fullWidth
-                    id="username"
-                    label="user Name"
-                    name="username"
-                    autoComplete="User Name"
+                    id="busNumber"
+                    label="Bus Number"
+                    name="busNumber"
+                    autoComplete="Bus Number"
                     autoFocus
                 />
 
@@ -111,10 +111,10 @@ export default function AddConductor() {
                     margin="normal"
                     required
                     fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
+                    id="busRoute"
+                    label="Bus Route"
+                    name="busRoute"
+                    autoComplete="Bus Route"
                     
                 />
 
@@ -123,58 +123,10 @@ export default function AddConductor() {
                     margin="normal"
                     required
                     fullWidth
-                    id="nic"
-                    label="NIC Number"
-                    name="nic"
-                    autoComplete="NIC"
-                    
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="contact"
-                    label="Contact Number"
-                    name="contact"
-                    autoComplete="contact"
-                />
-
-                
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                   
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                    
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
+                    id="busCapacity"
+                    label="Bus Capacity"
+                    name="busCapacity"
+                    autoComplete="Bus Capacity"
                     
                 />
                 

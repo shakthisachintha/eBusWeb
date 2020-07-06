@@ -124,7 +124,7 @@ function ResponsiveDrawer(props) {
           aria-labelledby="nested-list-subheader"
           className={classes.menu}
         >
-          <Link href="/" variant="body2" underline="none">
+          <Link href="/viewBuses" variant="body2" underline="none">
               <ListItem button>
                 <ListItemText primary="Buses" />
               </ListItem>

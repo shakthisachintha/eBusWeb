@@ -11,7 +11,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import ResponsiveDrawer from './../../sidebar/siebardup';
+import ResponsiveDrawer from './../sidebar/siebardup';
 
 import { Link } from "react-router-dom";
 
@@ -104,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function ViewConductor() {
+export default function ViewBuses() {
   const classes = useStyles();
 
   return (
@@ -122,8 +122,8 @@ export default function ViewConductor() {
             Conductors
             </Typography>
 
-               <Button variant="contained" color="primary" href="/addconductor">
-                  Add New Conductor
+               <Button variant="contained" color="primary" href="/busRegister">
+                  Add New Bus
               </Button>
             
           <TableContainer component={Paper}>

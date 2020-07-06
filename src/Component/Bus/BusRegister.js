@@ -6,12 +6,13 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import ResponsiveDrawer from './../../sidebar/siebardup'
+import ResponsiveDrawer from './../sidebar/siebardup'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#a503fc',
+    backgroundColor: 'white',
+    // backgroundColor: '#a503fc',
     alignItems: 'center',
     justifyContent: 'center',
     width: '99vw',
@@ -71,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AddConductor() {
+export default function BusRegister() {
   const classes = useStyles();
 
   return (
@@ -90,7 +91,7 @@ export default function AddConductor() {
             <form>
               
             <Typography component="h2" variant="" className={classes.welcome}>
-               Conductor Registration
+               Bus Registration
             </Typography>
 
             

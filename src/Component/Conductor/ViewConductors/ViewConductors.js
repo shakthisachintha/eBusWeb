@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
   root: {
     flexGrow: 1,
-    backgroundColor: '#cfd8dc',
+    backgroundColor: 'white',
     alignItems: 'top',
     // justifyContent: 'center',
     width: '99vw',
@@ -154,10 +154,9 @@ export default function CheckingView() {
                     <StyledTableCell align="right">{row.protein}</StyledTableCell>
                     <StyledTableCell align="right">{row.protein}</StyledTableCell>
                     <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                    <StyledTableCell align="right">
-                        <Link to={'/viewsingleconductor'}>
-                        <button>View</button>
-                    </Link></StyledTableCell>
+                    <StyledTableCell align="right"><Link to={'/viewsingleconductor'}>
+          <button>View</button>
+        </Link></StyledTableCell>
                   </StyledTableRow>
                 ))}
               </TableBody>

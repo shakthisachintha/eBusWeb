@@ -2,25 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import CommuteIcon from '@material-ui/icons/Commute';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
-import G3 from  "../images/G3.png";
+import Link from '@material-ui/core/Link';
+import Collapse from '@material-ui/core/Collapse';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import G3 from "../images/G3.png";
 const drawerWidth = 160;
 
 
@@ -38,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
+      backgroundColor:'#aa00ff'
     },
   },
   menuButton: {
@@ -55,18 +54,26 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
-  card:{
+  card: {
     backgroundColor: 'transparent',
     boxShadow: 'none',
     marginTop: 20,
   },
   title: {
     flexGrow: 1,
-    color:'white',
-    marginTop:'5px',
-    marginLeft:'60px',
-    fontFamily:'Roboto',
-    fontSize:'30px',
+    color: 'white',
+    marginTop: '5px',
+    marginLeft: '60px',
+    fontFamily: 'Roboto',
+    fontSize: '30px',
+  },
+  menu: {
+    width: '90%',
+    maxWidth: 160,
+    backgroundColor: theme.palette.background.paper,
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
   },
 }));
 
@@ -80,15 +87,20 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
   const drawer = (
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
-        
       </AppBar>
-      
+
       <Drawer
-      
+
         className={classes.drawer}
         variant="permanent"
         classes={{
@@ -97,35 +109,72 @@ function ResponsiveDrawer(props) {
         anchor="left"
       >
         <Card className={classes.card}>
-                <CardMedia
-                  component="img"
-                  alt="eBus image"
-                  height="130"
-                  image={G3}
-                  title="eBus image"
-                />
+          <CardMedia
+            component="img"
+            alt="eBus image"
+            height="130"
+            image={G3}
+            title="eBus image"
+          />
         </Card>
         <div className={classes.toolbar} />
-        
-        <List>
-          {['Test', 'Test', 'Test', 'Test'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <AccountCircleIcon /> : <CommuteIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+
+        <List
+          component="nav"
+          aria-labelledby="nested-list-subheader"
+          className={classes.menu}
+        >
+          <Link href="/" variant="body2" underline="none">
+              <ListItem button>
+                <ListItemText primary="Buses" />
+              </ListItem>
+          </Link >
+
+          <Link href="/viewconductor" variant="body2" underline="none">
+              <ListItem button>
+                <ListItemText primary="Conductors" />
+              </ListItem>
+          </Link >
+          
+          <ListItem button onClick={handleClick}>
+            <ListItemText primary="Reports" />
+            {open ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItem button className={classes.nested}>
+              <Link href="/" variant="body2" underline="none">
+              <ListItem button>
+                <ListItemText primary="Generate Report" />
+              </ListItem>
+              </Link >
+              </ListItem>
+              
+              <ListItem button className={classes.nested}>
+              <Link href="/" variant="body2" underline="none">
+              <ListItem button>
+                <ListItemText primary="View Report" />
+              </ListItem>
+              </Link >
+              </ListItem>
+              </List>
+          </Collapse>
+              <Link href="/profile" variant="body2" underline="none">
+              <ListItem button>
+                <ListItemText primary="Profle" />
+              </ListItem>
+              </Link >
+
+              <Link href="/" variant="body2" underline="none">
+              <ListItem button>
+                <ListItemText primary="Log Out" />
+              </ListItem>
+              </Link >
+           
         </List>
-        <Divider />
-        <List>
-          {['Test ', 'Test', 'Test'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+
       </Drawer>
-      
+
     </div>
   );
 
@@ -146,7 +195,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-                  eBus | 
+            eBus |
           </Typography>
         </Toolbar>
       </AppBar>
@@ -220,3 +269,4 @@ ResponsiveDrawer.propTypes = {
 };
 
 export default ResponsiveDrawer;
+

@@ -16,6 +16,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import ResponsiveDrawer from './../../sidebar/siebardup'
 
+import { Link } from "react-router-dom";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 
   root: {
     flexGrow: 1,
-    backgroundColor: '#a503fc',
+    backgroundColor: 'white',
     alignItems: 'top',
     // justifyContent: 'center',
     width: '99vw',
@@ -162,6 +163,7 @@ export default function ViewConductor() {
                   <StyledTableCell align="right">Vitamins&nbsp;(g)</StyledTableCell>
                   <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
                   <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell align="right">Vitamin X&nbsp;(g)</StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -177,16 +179,14 @@ export default function ViewConductor() {
                     <StyledTableCell align="right">{row.protein}</StyledTableCell>
                     <StyledTableCell align="right">{row.protein}</StyledTableCell>
                     <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                    <StyledTableCell align="right"><Link to={'/viewsingleconductor'}>
+          <button>View</button>
+        </Link></StyledTableCell>
                   </StyledTableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
-
-
-
-
-
           <div>
 
           </div>

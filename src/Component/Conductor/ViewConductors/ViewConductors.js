@@ -2,11 +2,8 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import PermanentDrawerLeft from './../../sidebar/sidebar';
+import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -14,9 +11,14 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+
 import ResponsiveDrawer from './../../sidebar/siebardup'
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+
+import ResponsiveDrawer from './../../sidebar/siebardup';
+
+
 import { Link } from "react-router-dom";
 
 const StyledTableCell = withStyles((theme) => ({
@@ -90,12 +92,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 10
 
   },
-  ebus: {
-    fontFamily: 'Roboto',
-    textAlign: 'center',
-    color: 'white',
-    fontSize: '2.5rem'
-  },
+
 
   button: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -112,7 +109,6 @@ const useStyles = makeStyles((theme) => ({
     width: '150px',
     paddingTop: '10%'
 
-  },
   card: {
     maxWidth: '180px',
     backgroundColor: 'transparent',
@@ -144,7 +140,10 @@ export default function ViewConductor() {
             Conductors
             </Typography>
 
-
+               <Button variant="contained" color="primary" href="/addconductor">
+                  Add New Conductor
+              </Button>
+            
           <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="customized table">
               <TableHead>

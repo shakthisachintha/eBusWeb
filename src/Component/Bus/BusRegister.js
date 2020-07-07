@@ -6,13 +6,13 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import PermanentDrawerLeft from './../../sidebar/sidebar';
-import ResponsiveDrawer from './../../sidebar/siebardup'
+import ResponsiveDrawer from './../sidebar/siebardup'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: 'white',
+    // backgroundColor: '#a503fc',
     alignItems: 'center',
     justifyContent: 'center',
     width: '99vw',
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid',
     lineHeight: 1.5,
     borderColor: '#0063cc',
-    paddingTop:'5%'
+    
     
   },
   paper: {
@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ViewSingleConductor() {
+export default function BusRegister() {
   const classes = useStyles();
 
   return (
@@ -91,7 +91,7 @@ export default function ViewSingleConductor() {
             <form>
               
             <Typography component="h2" variant="" className={classes.welcome}>
-               Conductor Registration
+               Bus Registration
             </Typography>
 
             
@@ -100,10 +100,10 @@ export default function ViewSingleConductor() {
                     margin="normal"
                     required
                     fullWidth
-                    id="username"
-                    label="user Name"
-                    name="username"
-                    autoComplete="User Name"
+                    id="busNumber"
+                    label="Bus Number"
+                    name="busNumber"
+                    autoComplete="Bus Number"
                     autoFocus
                 />
 
@@ -112,10 +112,10 @@ export default function ViewSingleConductor() {
                     margin="normal"
                     required
                     fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
+                    id="busRoute"
+                    label="Bus Route"
+                    name="busRoute"
+                    autoComplete="Bus Route"
                     
                 />
 
@@ -124,58 +124,10 @@ export default function ViewSingleConductor() {
                     margin="normal"
                     required
                     fullWidth
-                    id="nic"
-                    label="NIC Number"
-                    name="nic"
-                    autoComplete="NIC"
-                    
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="contact"
-                    label="Contact Number"
-                    name="contact"
-                    autoComplete="contact"
-                />
-
-                
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                   
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                    
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
+                    id="busCapacity"
+                    label="Bus Capacity"
+                    name="busCapacity"
+                    autoComplete="Bus Capacity"
                     
                 />
                 

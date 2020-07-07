@@ -72,6 +72,7 @@ class SignIn extends Component{
               height:'150px',
               width:'200px',
               position:'fixed',
+            
 
             }}>
                 <CardMedia

@@ -12,11 +12,11 @@ import ResponsiveDrawer from './../../sidebar/siebardup'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#cfd8dc',
     alignItems: 'center',
     justifyContent: 'center',
     width: '99vw',
-    height: '125vh',
+    height: '140vh',
     spacing: 0,
     boxShadow: 'none',
     textTransform: 'none',
@@ -24,28 +24,28 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid',
     lineHeight: 1.5,
     borderColor: '#0063cc',
-    paddingTop:'5%'
-    
+    paddingTop: '5%'
+
   },
   paper: {
-    
+
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-  welcome:{
-    fontFamily:'Roboto',
+  welcome: {
+    fontFamily: 'Roboto',
     textAlign: 'center',
-    fontSize:'1.8rem' 
-      
+    fontSize: '1.8rem'
+
   },
-  ebus:{
-    fontFamily:'Roboto',
+  ebus: {
+    fontFamily: 'Roboto',
     textAlign: 'center',
-    color:'white',
-    fontSize:'2.5rem'  
+    color: 'white',
+    fontSize: '2.5rem'
   },
-  
-  button:{
+
+  button: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     borderRadius: 8,
     border: 0,
@@ -56,11 +56,11 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     justifyContent: 'center'
   },
-  image:{
-    height:'100px',
-    width:'150px',
+  image: {
+    height: '100px',
+    width: '150px',
     paddingTop: '10%'
-    
+
   },
   card: {
     maxWidth: '180px',
@@ -77,120 +77,115 @@ export default function AddConductor() {
 
   return (
     <Grid container className={classes.root}>
-        <ResponsiveDrawer/>
-        <Grid item xs={12} sm={6} >
-        
-            
-            <Paper style={
-              {
-                padding: '20px 50px',
-                margin: 50,
-                textAlign: 'center',
-            }}>
+      <ResponsiveDrawer />
+      <Grid item xs={12} sm={6} >
 
-            <form>
-              
+
+        <Paper style={
+          {
+            padding: '20px 50px',
+            margin: 50,
+            textAlign: 'center',
+          }}>
+
+          <form>
+
             <Typography component="h2" variant="" className={classes.welcome}>
-               Conductor Registration
+              Conductor Registration
             </Typography>
 
-            
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="username"
-                    label="user Name"
-                    name="username"
-                    autoComplete="User Name"
-                    autoFocus
-                />
 
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                    
-                />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="username"
+              label="User Name"
+              name="username"
+              autoComplete="User Name"
+            />
 
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="nic"
-                    label="NIC Number"
-                    name="nic"
-                    autoComplete="NIC"
-                    
-                />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              id="email"
+              label="Email"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="address"
+              label="Address"
+              name="address"
+              autoComplete="address"
 
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="contact"
-                    label="Contact Number"
-                    name="contact"
-                    autoComplete="contact"
-                />
+            />
 
-                
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                   
-                />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="nic"
+              label="NIC Number"
+              name="nic"
+              autoComplete="NIC"
 
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                    
-                />
+            />
 
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                    
-                />
-                
-                 
-                <div>
-                <Button className={clsx(classes.button)} 
+<TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="conductorno"
+              label="Conductor License Number"
+              name="conductorno"
+              autoComplete="conductorno"
+            />
+
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="contact"
+              label="Contact Number"
+              name="contact"
+              autoComplete="contact"
+            />
+
+
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="bus"
+              label="Bus No"
+              name="bus"
+              autoComplete="bus"
+
+            />
+
+            <div>
+              <Button className={clsx(classes.button)}
                 type="submit"
                 variant="contained">
-                 {'Register'}
-                </Button>
-                </div>
-                <br></br>               
-            </form>
-         </Paper>
-        </Grid>
+                {'Register'}
+              </Button>
+            </div>
+            <br></br>
+          </form>
+        </Paper>
+      </Grid>
     </Grid>
   );
 }

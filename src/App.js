@@ -10,8 +10,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ResetPassword from './Component/SignIn/ResetPassword';
 import Profile from './Component/Profile/Profile';
 import ResponsiveDrawer from './Component/sidebar/siebardup';
-import ViewSingleConductor from './Component/sidebar/siebardup'
-
+import ViewSingleConductor from './Component/Conductor/ViewConductors/ViewSingleConductor'
   
 class App extends Component { 
     render() {  

@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -10,50 +11,43 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ResponsiveDrawer from './../../Component/sidebar/siebardup';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-});
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+  }));
 
-export default function Dashboard() {
-  const classes = useStyles();
-
-  return (
-    <Grid container className={classes.root}>
-        <ResponsiveDrawer />
-        <Grid item xs={12} sm={10} >
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                    className={classes.media}
-                    image="Components/images/G3.png"
-                    title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
-                    </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button size="small" color="primary">
-                    Share
-                    </Button>
-                    <Button size="small" color="primary">
-                    Learn More
-                    </Button>
-                </CardActions>
-            </Card>
-        </Grid>
-    </Grid>
-    
-  );
-}
+  export default function AutoGrid() {
+    const classes = useStyles();
+  
+    return (
+      <div className={classes.root}>
+          <Grid container spacing={3}>
+              <ResponsiveDrawer/>
+              <Grid item xs>
+                <Paper className={classes.paper} 
+                    style={{padding:'20px 50px', margin: 50, textAlign: 'center',}} 
+                    >xs</Paper>
+              
+              </Grid>
+              <Grid item xs>
+                <Paper className={classes.paper} 
+                    style={{padding:'20px 50px', margin: 50, textAlign: 'center',}} 
+                    >xs</Paper>
+              
+              </Grid>
+            <Grid item xs>
+              <Paper className={classes.paper} 
+                  style={{padding:'20px 50px', margin: 50, textAlign: 'center',}} 
+                  >xs</Paper>
+            
+            </Grid>
+          </Grid>
+      </div>
+    );
+  }

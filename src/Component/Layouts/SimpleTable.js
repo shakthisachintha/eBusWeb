@@ -85,3 +85,8 @@ export default function SimpleTable(props) {
     </div>
   );
 }
+
+
+{/* <StyledTableCell align="right"><Link to={'/viewsingleconductor'}>
+          <button>View</button>
+        </Link></StyledTableCell> */}

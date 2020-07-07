@@ -12,8 +12,11 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import ResponsiveDrawer from './../sidebar/siebardup';
+import SimpleTable from './../Layouts/SimpleTable'
 
 import { Link } from "react-router-dom";
+
+
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -38,14 +41,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('1', 455 , 6.0, 24, 4.0),
+  createData('2', 237, 9.0, 37, 4.3),
+  createData('3', 262, 16.0, 24, 6.0),
+  createData('4', 305, 3.7, 67, 4.3),
+  createData('5', 356, 16.0, 49, 3.9),
 ];
 
 
@@ -106,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ViewBuses() {
   const classes = useStyles();
+  
 
   return (
     <Grid container className={classes.root}>
@@ -130,35 +131,76 @@ export default function ViewBuses() {
             <Table className={classes.table} aria-label="customized table">
               <TableHead>
                 <TableRow>
-                  <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-                  <StyledTableCell align="right">Calories</StyledTableCell>
-                  <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Vitamins&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Vitamin X&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell>Id</StyledTableCell>
+                  <StyledTableCell align="right">Bus No</StyledTableCell>
+                  <StyledTableCell align="right">Bus Route</StyledTableCell>
+                  <StyledTableCell align="right">BusCapacity</StyledTableCell>
+                  <StyledTableCell align="right">Action</StyledTableCell>
+                  
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row) => (
-                  <StyledTableRow key={row.name}>
+                {/* {rows.map((row) => ( */}
+                  <StyledTableRow>
                     <StyledTableCell component="th" scope="row">
-                      {row.name}
+                      1
                     </StyledTableCell>
-                    <StyledTableCell align="right">{row.calories}</StyledTableCell>
-                    <StyledTableCell align="right">{row.fat}</StyledTableCell>
-                    <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                    <StyledTableCell align="right">GL1245</StyledTableCell>
+                    <StyledTableCell align="right">138 Kottawa Pitakotuwa</StyledTableCell>
+                    <StyledTableCell align="right">45</StyledTableCell>
                     <StyledTableCell align="right"><Link to={'/viewsingleconductor'}>
           <button>View</button>
         </Link></StyledTableCell>
                   </StyledTableRow>
-                ))}
+
+                  <StyledTableRow>
+                    <StyledTableCell component="th" scope="row">
+                      2
+                    </StyledTableCell>
+                    <StyledTableCell align="right">GL5211</StyledTableCell>
+                    <StyledTableCell align="right">138 Kottawa-Maharagama</StyledTableCell>
+                    <StyledTableCell align="right">45</StyledTableCell>
+                    <StyledTableCell align="right"><Link to={'/viewsingleconductor'}>
+          <button>View</button>
+        </Link></StyledTableCell>
+                  </StyledTableRow>
+
+                  <StyledTableRow>
+                    <StyledTableCell component="th" scope="row">
+                      3
+                    </StyledTableCell>
+                    <StyledTableCell align="right">KA5417</StyledTableCell>
+                    <StyledTableCell align="right">154 Kiribathgoda - Angulana</StyledTableCell>
+                    <StyledTableCell align="right">40</StyledTableCell>
+                    <StyledTableCell align="right"><Link to={'/viewsingleconductor'}>
+          <button>View</button>
+        </Link></StyledTableCell>
+                  </StyledTableRow>
+
+                  <StyledTableRow>
+                    <StyledTableCell component="th" scope="row">
+                      4
+                    </StyledTableCell>
+                    <StyledTableCell align="right">GL2132</StyledTableCell>
+                    <StyledTableCell align="right">113 Fort - Nugegoda</StyledTableCell>
+                    <StyledTableCell align="right">50</StyledTableCell>
+                    <StyledTableCell align="right"><Link to={'/viewsingleconductor'}>
+          <button>View</button>
+        </Link></StyledTableCell>
+                  </StyledTableRow>
+
+                  <StyledTableRow>
+                    <StyledTableCell component="th" scope="row">
+                      5
+                    </StyledTableCell>
+                    <StyledTableCell align="right">NB 4512</StyledTableCell>
+                    <StyledTableCell align="right">113 Fort - Nugegoda</StyledTableCell>
+                    <StyledTableCell align="right">50</StyledTableCell>
+                    <StyledTableCell align="right"><Link to={'/viewsingleconductor'}>
+          <button>View</button>
+        </Link></StyledTableCell>
+                  </StyledTableRow>
+                {/* // ))} */}
               </TableBody>
             </Table>
           </TableContainer>

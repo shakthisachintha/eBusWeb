@@ -11,13 +11,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
-import ResponsiveDrawer from './../../sidebar/siebardup'
-import DeleteIcon from '@material-ui/icons/Delete';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-
 import ResponsiveDrawer from './../../sidebar/siebardup';
-
 
 import { Link } from "react-router-dom";
 
@@ -93,21 +87,6 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
-
-  button: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 8,
-    border: 0,
-    color: 'black',
-    height: 48,
-    padding: '20px 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    justifyContent: 'center'
-  },
-  image: {
-    height: '100px',
-    width: '150px',
-    paddingTop: '10%'
 
   card: {
     maxWidth: '180px',

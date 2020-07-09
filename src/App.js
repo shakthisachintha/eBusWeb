@@ -14,14 +14,16 @@ import Error from './Component/Notification/Error';
 import Table from './Component/Layouts/Table'
 import FormDialog from './Component/Layouts/DialogForm'
 import CheckingView from './Component/Layouts/CheckingView'
+
+import PersistentDrawerLeft from './Component/Dashboard/Drawer'
 import Dashboard from './Component/Dashboard/Dashboard'
+import ExampleDash from './Component/Layouts/ExampleDash';
 import ResponsiveDrawer from './Component/sidebar/siebardup';
 
 import ViewSingleConductor from './Component/Conductor/ViewConductors/ViewSingleConductor'
-
-import ViewSingleConductor from './Component/sidebar/siebardup'
 import BusRegister from './Component/Bus/BusRegister'
 import ViewBuses from './Component/Bus/ViewBuses'
+
 
 
 
@@ -45,10 +47,11 @@ class App extends Component {
                       <Route exact path="/table" component ={Table}/>
                       <Route exact path="/formDialog" component={FormDialog}/>
                       <Route exact path="/checkView" component={CheckingView}/>
+                      <Route exact path="/drawer" component={PersistentDrawerLeft}/>
                       <Route exact path="/dashboard" component={Dashboard}/>
                       <Route exact path="/busRegister" component={BusRegister}/>
                       <Route exact path="/viewBuses" component={ViewBuses}/>
-
+                      <Route exact path="/exampDash" component={ExampleDash}/> 
                    
                       <Route exact path="/viewsingleconductor" component={ViewSingleConductor}/>
                   </Switch>

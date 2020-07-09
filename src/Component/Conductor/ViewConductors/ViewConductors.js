@@ -33,19 +33,17 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, email, address, nic, conductorno,contactno,busno) {
+  return { name, email, address, nic, conductorno,contactno,busno };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Niamal Samantha', 'nimal@gmail.com', 'No.22,Poddala,Galle', '667894138V', '789456123','0711237895','Nc-6688'),
+  createData('Kaveesha Kalhara', 'kaveesha@gmail.com', 'Kaveesha,Cross Street,Karapitiya', '789456123V', '667894138','0778945648','FH-4456'),
+  createData('Nuwan Dhanushka', '-', 'No.6,Cinnamon Gardens,Colombo 7', '967845122V', '874569254','0754786324','PO-7755'),
+  createData('Dumindu Chamal', 'dumindu@gmail.com', '63/5,baddegama,Galle', '874596123V', '54689256','0761421421','UY-2256'),
+  createData('Shakthi Sachintha', 'shakthi@gmail.com', 'No.6,Sunside Gardens,Colombo 6', '874569254V', '789236489','0774567891','FG-5687'),
+  createData('Udara Deshan', '-', 'No.55,Ambalangoda,Galle', '801457896V', '789456123','0714545457','SD-4496')
 ];
 
 
@@ -101,7 +99,8 @@ const useStyles = makeStyles((theme) => ({
   form: {
     marginTop: 10,
     paddingTop: '1%'
-  }
+  },
+  
 }));
 
 export default function ViewConductor() {
@@ -116,8 +115,6 @@ export default function ViewConductor() {
 
 
         <form className={classes.form}>
-
-
           <Typography component="h2" variant="" className={classes.welcome}>
             Conductors
             </Typography>
@@ -130,15 +127,14 @@ export default function ViewConductor() {
             <Table className={classes.table} aria-label="customized table">
               <TableHead>
                 <TableRow>
-                  <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-                  <StyledTableCell align="right">Calories</StyledTableCell>
-                  <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Vitamins&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Vitamin A&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">Vitamin X&nbsp;(g)</StyledTableCell>
+                  <StyledTableCell>Name</StyledTableCell>
+                  <StyledTableCell align="right">Email</StyledTableCell>
+                  <StyledTableCell align="right">Address</StyledTableCell>
+                  <StyledTableCell align="right">NIC</StyledTableCell>
+                  <StyledTableCell align="right">Conductor License No</StyledTableCell>
+                  <StyledTableCell align="right">Contact No</StyledTableCell>
+                  <StyledTableCell align="right">Bus No</StyledTableCell>
+                  <StyledTableCell align="right"></StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -147,13 +143,12 @@ export default function ViewConductor() {
                     <StyledTableCell component="th" scope="row">
                       {row.name}
                     </StyledTableCell>
-                    <StyledTableCell align="right">{row.calories}</StyledTableCell>
-                    <StyledTableCell align="right">{row.fat}</StyledTableCell>
-                    <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
-                    <StyledTableCell align="right">{row.protein}</StyledTableCell>
+                    <StyledTableCell align="right">{row.email}</StyledTableCell>
+                    <StyledTableCell align="right">{row.address}</StyledTableCell>
+                    <StyledTableCell align="right">{row.nic}</StyledTableCell>
+                    <StyledTableCell align="right">{row.conductorno}</StyledTableCell>
+                    <StyledTableCell align="right">{row.contactno}</StyledTableCell>
+                    <StyledTableCell align="right">{row.busno}</StyledTableCell>
                     <StyledTableCell align="right"><Link to={'/viewsingleconductor'}>
           <button>View</button>
         </Link></StyledTableCell>

@@ -56,29 +56,38 @@ export default function FormDialog() {
           <DialogContentText>
             
           </DialogContentText>
-          <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="username"
-                    label="user Name"
-                    name="username"
-                    autoComplete="User Name"
-                    autoFocus
-                />
+             <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="busNo"
+                  label="Bus Number"
+                  name="busNo"
+                  autoComplete="BusNo"
+                  autoFocus
+              />
 
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                    
-                />
+              <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="busRoute"
+                  label="Bus Route"
+                  name="busRoute"
+                  autoComplete="Bus Route"    
+              />
+              <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="busCapacity"
+                  label="Bus Capacity"
+                  name="busCapacity"
+                  autoComplete="Bus Capacity"
+              />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">

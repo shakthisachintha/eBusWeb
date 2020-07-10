@@ -12,9 +12,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import TextField from '@material-ui/core/TextField';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Buses from "./../images/Buses.jpg";
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -43,7 +41,7 @@ const useStyles = makeStyles((theme) =>({
         fontSize: "4rem",
     },
     exampleContainer: {
-        paddingTop: theme.spacing(10),
+        paddingTop: theme.spacing(5),
         paddingBottom: theme.spacing(10)
     },
     dashBody: {
@@ -119,46 +117,50 @@ export default function BusProfile() {
                     <Grid item xs={8}>
                         <Card className={classes.card}>
                             <CardActionArea>
-                                <CardMedia
-                                className={classes.media}
-                                image={Buses}
-                                />
-                                <CardContent>
+                               <CardContent>
                                 <Typography gutterBottom variant="h4" component="h2">
                                     Bus Details
                                 </Typography>
-                                    <TextField
+                                <Grid container spacing={3} direction="column">
+                                      <Grid item xs>
+                                        <TextField fullWidth
+                                                id="outlined-read-only-input"
+                                                label="Bus Number"
+                                                defaultValue="GY-5412"
+                                                InputProps={{
+                                                    readOnly: true,
+                                                }}
+                                                variant="outlined"
+                                                />
+                                        </Grid>
+                                       <Grid item xs>
+                                        <TextField fullWidth
                                             id="outlined-read-only-input"
-                                            label="Weekly income"
-                                            defaultValue="Rs 10,000"
+                                            label="Bus Route"
+                                            defaultValue="138 Kottawa-Maharagama"
                                             InputProps={{
                                                 readOnly: true,
                                             }}
                                             variant="outlined"
                                             />
-                                    <TextField
-                                        id="outlined-read-only-input"
-                                        label="Weekly income"
-                                        defaultValue="Rs 10,000"
-                                        InputProps={{
-                                            readOnly: true,
-                                        }}
-                                        variant="outlined"
-                                        />
-                                    <TextField
-                                        id="outlined-read-only-input"
-                                        label="Weekly income"
-                                        defaultValue="Rs 10,000"
-                                        InputProps={{
-                                            readOnly: true,
-                                        }}
-                                        variant="outlined"
-                                        />
+                                            </Grid>
+                                       <Grid item xs>
+                                        <TextField fullWidth
+                                            id="outlined-read-only-input"
+                                            label="Bus capacity"
+                                            defaultValue="45"
+                                            InputProps={{
+                                                readOnly: true,
+                                            }}
+                                            variant="outlined"
+                                            />
+                                        </Grid>
+                                   </Grid>
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
                                 <div>
-                                    <Button className={clsx(classes.button)} variant="outlined" 
+                                    <Button  variant="outlined" 
                                         onClick={handleClickOpen}>
                                         Update Details
                                     </Button>
@@ -167,16 +169,16 @@ export default function BusProfile() {
                                       <DialogContent>
                                         <DialogContentText>
                                             
-                                        </DialogContentText>
-                                        <TextField
+                                          </DialogContentText>
+                                                <TextField
                                                     variant="outlined"
                                                     margin="normal"
                                                     required
                                                     fullWidth
-                                                    id="username"
-                                                    label="user Name"
-                                                    name="username"
-                                                    autoComplete="User Name"
+                                                    id="busNo"
+                                                    label="Bus Number"
+                                                    name="busNo"
+                                                    autoComplete="BusNo"
                                                     autoFocus
                                                 />
 
@@ -185,19 +187,28 @@ export default function BusProfile() {
                                                     margin="normal"
                                                     required
                                                     fullWidth
-                                                    id="address"
-                                                    label="Address"
-                                                    name="address"
-                                                    autoComplete="address"
-                                                    
+                                                    id="busRoute"
+                                                    label="Bus Route"
+                                                    name="busRoute"
+                                                    autoComplete="Bus Route"    
                                                 />
-                                        </DialogContent>
+                                                <TextField
+                                                    variant="outlined"
+                                                    margin="normal"
+                                                    required
+                                                    fullWidth
+                                                    id="busCapacity"
+                                                    label="Bus Capacity"
+                                                    name="busCapacity"
+                                                    autoComplete="Bus Capacity"
+                                                />
+                                          </DialogContent>
                                         <DialogActions>
                                         <Button onClick={handleClose} color="primary">
                                             Cancel
                                         </Button>
                                         <Button onClick={handleClose} color="primary">
-                                            Subscribe
+                                            Update
                                         </Button>
                                         </DialogActions>
                                     </Dialog>
@@ -214,10 +225,10 @@ export default function BusProfile() {
                     <Grid item xs={4}>
                         <Card className={classes.card}>
                             <CardActionArea>
-                                <Typography gutterBottom variant="h4" component="h2">
-                                    Weekly Income
-                                </Typography>
                                 <CardContent>
+                                    <Typography gutterBottom variant="h4" component="h2">
+                                        Weekly Income
+                                    </Typography>
 
                                     <TextField
                                         id="outlined-read-only-input"
@@ -227,6 +238,7 @@ export default function BusProfile() {
                                             readOnly: true,
                                         }}
                                         variant="outlined"
+
                                         />
                                 </CardContent>
                             </CardActionArea>

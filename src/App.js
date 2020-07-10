@@ -16,6 +16,7 @@ import FormDialog from './Component/Layouts/DialogForm'
 import CheckingView from './Component/Layouts/CheckingView'
 import Dashboard from './Component/Dashboard/Dashboard'
 import ResponsiveDrawer from './Component/sidebar/siebardup';
+
 import ViewSingleConductor from './Component/Conductor/ViewConductors/ViewSingleConductor'
 import BusRegister from './Component/Bus/BusRegister'
 import ViewBuses from './Component/Bus/ViewBuses'
@@ -44,6 +45,7 @@ class App extends Component {
                       <Route exact path="/dashboard" component={Dashboard}/>
                       <Route exact path="/busRegister" component={BusRegister}/>
                       <Route exact path="/viewBuses" component={ViewBuses}/>
+
                       <Route exact path="/viewsingleconductor" component={ViewSingleConductor}/>
                       <Route exact path="/test" component={test}/>
                   </Switch>

@@ -9,8 +9,18 @@ import ViewConductorDup from './Component/Conductor/ViewConductors/ViewConductor
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ResetPassword from './Component/SignIn/ResetPassword';
 import Profile from './Component/Profile/Profile';
+import Success from './Component/Notification/Success';
+import Error from './Component/Notification/Error';
+import Table from './Component/Layouts/Table'
+import FormDialog from './Component/Layouts/DialogForm'
+import CheckingView from './Component/Layouts/CheckingView'
+import Dashboard from './Component/Dashboard/Dashboard'
 import ResponsiveDrawer from './Component/sidebar/siebardup';
 import ViewSingleConductor from './Component/Conductor/ViewConductors/ViewSingleConductor'
+import BusRegister from './Component/Bus/BusRegister'
+import ViewBuses from './Component/Bus/ViewBuses'
+import test from './Component/SignUp/test'; 
+
   
 class App extends Component { 
     render() {  
@@ -27,9 +37,15 @@ class App extends Component {
                       <Route exact path="/profile" component={Profile}/>
                       <Route exact path="/addconductor" component={AddConductor}/>
                       <Route exact path="/viewconductordup" component={ViewConductorDup}/>
-                      <Route exact path="/viewconductordup" component={ViewConductorDup}/>
                       <Route exact path="/sidebardup" component={ResponsiveDrawer}/>
+                      <Route exact path="/table" component ={Table}/>
+                      <Route exact path="/formDialog" component={FormDialog}/>
+                      <Route exact path="/checkView" component={CheckingView}/>
+                      <Route exact path="/dashboard" component={Dashboard}/>
+                      <Route exact path="/busRegister" component={BusRegister}/>
+                      <Route exact path="/viewBuses" component={ViewBuses}/>
                       <Route exact path="/viewsingleconductor" component={ViewSingleConductor}/>
+                      <Route exact path="/test" component={test}/>
                   </Switch>
               </Router>
           

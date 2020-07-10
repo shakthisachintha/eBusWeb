@@ -10,12 +10,15 @@ import { styled } from '@material-ui/core/styles';
 
 const MyButton = styled(Button)({
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    borderRadius: 8,
     border: 0,
-    borderRadius: 3,
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     color: 'black',
     height: 48,
-    padding: '0 30px',
+    width: "200%",
+    padding: '20px 30px',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    alignItems: 'center',
+    fontSize: '20px'
   });
 
 
@@ -33,20 +36,22 @@ export default function FormDialog() {
   return (
     
         
-    <div style={{
-        alignItems:'center',
-        justifyContent:'center',
-        display:'flex',
-        margin:'15px'
-      }}>
-      <Button variant="outlined" color="" onClick={handleClickOpen}>
+    <div 
+      //   style={{
+      //   alignItems:'center',
+      //   justifyContent:'center',
+      //   display:'flex',
+      //   margin:'15px'
+      // }}
+      >
+      {/* <Button variant="outlined" color="" onClick={handleClickOpen}>
             Add New Bus
-      </Button>
+      </Button> */}
 
-      <MyButton variant="outlined" onClick={handleClickOpen}>Add New Bus</MyButton>
+      <MyButton variant="outlined" onClick={handleClickOpen}>Update</MyButton>
       
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Register Buses</DialogTitle>
+        <DialogTitle id="form-dialog-title">Update Bus Details</DialogTitle>
         <DialogContent>
           <DialogContentText>
             

@@ -23,8 +23,7 @@ import ResponsiveDrawer from './Component/sidebar/siebardup';
 import ViewSingleConductor from './Component/Conductor/ViewConductors/ViewSingleConductor'
 import BusRegister from './Component/Bus/BusRegister'
 import ViewBuses from './Component/Bus/ViewBuses'
-
-
+import test from './Component/SignUp/test'; 
 
 
   
@@ -51,9 +50,14 @@ class App extends Component {
                       <Route exact path="/dashboard" component={Dashboard}/>
                       <Route exact path="/busRegister" component={BusRegister}/>
                       <Route exact path="/viewBuses" component={ViewBuses}/>
+
+
+
                       <Route exact path="/exampDash" component={ExampleDash}/> 
                    
+
                       <Route exact path="/viewsingleconductor" component={ViewSingleConductor}/>
+                      <Route exact path="/test" component={test}/>
                   </Switch>
               </Router>
           

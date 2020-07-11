@@ -25,10 +25,11 @@ import BusRegister from './Component/Bus/BusRegister'
 import ViewBuses from './Component/Bus/ViewBuses'
 import BusProfile from './Component/Bus/BusProfile'
 
-//
+// routes for testing 
 import Table from './Component/Layouts/Table'
 import FormDialog from './Component/Layouts/DialogForm'
 import CheckingView from './Component/Layouts/CheckingView'
+import ExampleForm from './Component/Layouts/ExampleForm'
 
 
 
@@ -63,6 +64,7 @@ class App extends Component {
                       <Route exact path="/formDialog" component={FormDialog}/>
                       <Route exact path="/checkView" component={CheckingView}/>
                       <Route exact path="/busProfile" component={BusProfile}/>
+                      <Route exact path="/exampleform" component={ExampleForm}/>
 
                    
                       

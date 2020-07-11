@@ -9,8 +9,8 @@ import ViewConductorDup from './Component/Conductor/ViewConductors/ViewConductor
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ResetPassword from './Component/SignIn/ResetPassword';
 import Profile from './Component/Profile/Profile';
-import Success from './Component/Notification/Success';
-import Error from './Component/Notification/Error';
+//import Success from './Component/Notification/Success';
+//import Error from './Component/Notification/Error';
 import Table from './Component/Layouts/Table'
 import FormDialog from './Component/Layouts/DialogForm'
 import CheckingView from './Component/Layouts/CheckingView'
@@ -21,6 +21,8 @@ import ExampleDash from './Component/Layouts/ExampleDash';
 import ResponsiveDrawer from './Component/sidebar/siebardup';
 
 import ViewSingleConductor from './Component/Conductor/ViewConductors/ViewSingleConductor'
+
+//import ViewSingleConductor from './Component/sidebar/siebardup'
 import BusRegister from './Component/Bus/BusRegister'
 import ViewBuses from './Component/Bus/ViewBuses'
 import test from './Component/SignUp/test'; 

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     width: '99vw',
-    height: '125vh',
+    height: '100vh',
     spacing: 0,
     boxShadow: 'none',
     textTransform: 'none',
@@ -74,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BusRegister() {
   const classes = useStyles();
+  
 
   return (
     <Grid container className={classes.root}>
@@ -104,7 +105,7 @@ export default function BusRegister() {
                     label="Bus Number"
                     name="busNumber"
                     autoComplete="Bus Number"
-                    autoFocus
+                    // autoFocus
                 />
 
                 <TextField

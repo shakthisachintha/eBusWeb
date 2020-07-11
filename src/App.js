@@ -20,7 +20,7 @@ import ViewConductor from './Component/Conductor/ViewConductors/ViewConductors';
 import ViewConductorDup from './Component/Conductor/ViewConductors/ViewConductorsDup';
 import ViewSingleConductor from './Component/Conductor/ViewConductors/ViewSingleConductor'
 
-// Importing Routes for Conductor details
+// Importing Routes for Bus details
 import BusRegister from './Component/Bus/BusRegister'
 import ViewBuses from './Component/Bus/ViewBuses'
 import BusProfile from './Component/Bus/BusProfile'
@@ -32,8 +32,6 @@ import CheckingView from './Component/Layouts/CheckingView'
 import ExampleForm from './Component/Layouts/ExampleForm'
 
 //import ViewSingleConductor from './Component/sidebar/siebardup'
-import BusRegister from './Component/Bus/BusRegister'
-import ViewBuses from './Component/Bus/ViewBuses'
 import test from './Component/SignUp/test'; 
 
 

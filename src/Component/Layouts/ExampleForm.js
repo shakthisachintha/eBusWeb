@@ -4,8 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import ResponsiveDrawer from './../sidebar/siebardup'
 
 
@@ -121,12 +119,16 @@ export default class ExampleForm extends React.Component {
                         />
                         
                         
+                        {/* <div className="form-group">
+                            <input type="submit" value="Register Bus" className="btn btn-primary"></input>
+                        
+                        </div> */}
                         <div>
-                        <Button 
-                        type="submit"
-                        variant="contained">
-                        {'Register'}
-                        </Button>
+                            <Button className="button" color="primary" 
+                                type="submit"
+                                variant="contained">
+                                {'Register'}
+                            </Button>
                         </div>
                         <br></br>               
                     </form>

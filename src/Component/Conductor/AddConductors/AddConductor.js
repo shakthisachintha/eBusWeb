@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#d7a8df',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '99vw',
-    height: '140vh',
+    width: '98.93vw',
+    height: '110vh',
     spacing: 0,
     boxShadow: 'none',
     textTransform: 'none',
@@ -113,7 +113,7 @@ export default function AddConductor() {
               label="Email"
               name="email"
               autoComplete="email"
-              autoFocus
+              // autoFocus
             />
             <TextField
               variant="outlined"

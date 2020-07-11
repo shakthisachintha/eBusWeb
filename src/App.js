@@ -31,6 +31,10 @@ import FormDialog from './Component/Layouts/DialogForm'
 import CheckingView from './Component/Layouts/CheckingView'
 import ExampleForm from './Component/Layouts/ExampleForm'
 
+//import ViewSingleConductor from './Component/sidebar/siebardup'
+import BusRegister from './Component/Bus/BusRegister'
+import ViewBuses from './Component/Bus/ViewBuses'
+import test from './Component/SignUp/test'; 
 
 
   
@@ -66,8 +70,8 @@ class App extends Component {
                       <Route exact path="/busProfile" component={BusProfile}/>
                       <Route exact path="/exampleform" component={ExampleForm}/>
 
-                   
-                      
+                      <Route exact path="/viewsingleconductor" component={ViewSingleConductor}/>
+                      <Route exact path="/test" component={test}/>
                   </Switch>
               </Router>
           

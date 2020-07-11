@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) =>({
     //     paddingBottom: theme.spacing(10)
     // },
     buses: {
-        backgroundImage: 'https://unsplash.com/photos/y2b2nPmy_LY',
         height: "100px",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

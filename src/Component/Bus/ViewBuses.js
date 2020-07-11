@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
   root: {
     flexGrow: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#cfd8dc',
     alignItems: 'top',
     // justifyContent: 'center',
     width: '99vw',
@@ -120,7 +120,7 @@ export default function ViewBuses() {
 
 
           <Typography component="h2" variant="" className={classes.welcome}>
-            Conductors
+            Bus Details
             </Typography>
 
                <Button variant="contained" color="primary" href="/busRegister">

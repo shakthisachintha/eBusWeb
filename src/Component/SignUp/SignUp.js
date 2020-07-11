@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#aa00ff',
     // alignItems: 'center',
     justifyContent: 'center',
-    width: '99vw',
-    height: '140vh',
+    width: '98.93vw',
+    height: '110vh',
     spacing: 0,
     boxShadow: 'none',
     textTransform: 'none',
@@ -136,7 +136,7 @@ export default function SignIn() {
               label="Email"
               name="email"
               autoComplete="email"
-              autoFocus
+              //autoFocus
             />
             <TextField
               variant="outlined"

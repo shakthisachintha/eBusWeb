@@ -11,12 +11,12 @@ import ResponsiveDrawer from './../sidebar/siebardup'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#cfd8dc',
     // backgroundColor: '#a503fc',
     alignItems: 'center',
     justifyContent: 'center',
     width: '99vw',
-    height: '125vh',
+    height: '100vh',
     spacing: 0,
     boxShadow: 'none',
     textTransform: 'none',
@@ -104,7 +104,7 @@ export default function BusRegister() {
                     label="Bus Number"
                     name="busNumber"
                     autoComplete="Bus Number"
-                    autoFocus
+                    // autoFocus
                 />
 
                 <TextField

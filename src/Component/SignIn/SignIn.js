@@ -34,7 +34,7 @@ class SignIn extends Component{
 
     handleSubmit =(event) =>{
       alert(`${this.state.email} ${this.state.password} Success`)
-      this.props.history.push('/sidebardup');
+      this.props.history.push('/dashboard');
       // console.log(this.state);
       // this.state({
       //   email:"",

@@ -16,7 +16,7 @@ import ResponsiveDrawer from './../../sidebar/siebardup'
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
-import ResponsiveDrawer from './../../sidebar/siebardup';
+//import ResponsiveDrawer from './../../sidebar/siebardup';
 
 
 import { Link } from "react-router-dom";
@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100px',
     width: '150px',
     paddingTop: '10%'
-
+  },
   card: {
     maxWidth: '180px',
     backgroundColor: 'transparent',

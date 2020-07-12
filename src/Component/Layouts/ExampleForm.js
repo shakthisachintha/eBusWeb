@@ -6,6 +6,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import ResponsiveDrawer from './../sidebar/siebardup'
 
+// sending requests
+import axios from 'axios';
+
 
 export default class ExampleForm extends React.Component {
 
@@ -49,6 +52,15 @@ export default class ExampleForm extends React.Component {
         console.log(`Bus Number: ${this.state.busNo}`);
         console.log(`Bus Route: ${this.state.busRoute}`);
         console.log(`Bus Capacity: ${this.state.busCapacity}`);
+
+        const newBus = {
+            busNo: this.state.busNo,
+            busRoute: this.state.busRoute,
+            busCapacity: this.state.busCapacity
+        }
+
+        axios.post('http://localhost:3000/eBus/api/register', newBus)
+             .then(res => console.log(res.data));
 
         this.setState({
             busNo: '',

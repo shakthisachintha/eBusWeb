@@ -3,8 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import SignIn from './Component/SignIn/SignIn';  
 import SignUp from './Component/SignUp/SignUp'; 
-import ForgotPassword from './Component/SignIn/ForgotPassword';
-import ResetPassword from './Component/SignIn/ResetPassword';
+import ForgotPassword from './Component/PasswordReset/ForgotPassword';
+import ResetPassword from './Component/PasswordReset/ResetPassword';
 import Dashboard from './Component/Dashboard/Dashboard'
 import PermanentDrawerLeft from './Component/sidebar/sidebar';
 import ResponsiveDrawer from './Component/sidebar/siebardup';
@@ -32,7 +32,11 @@ import CheckingView from './Component/Layouts/CheckingView'
 import ExampleForm from './Component/Layouts/ExampleForm'
 
 //import ViewSingleConductor from './Component/sidebar/siebardup'
-import test from './Component/SignUp/test'; 
+import test from './Component/SignUp/test';
+
+//Report Generation
+
+import DatePic from './Component/ReportGeneration/DatePeriod';
 
 
   
@@ -70,6 +74,9 @@ class App extends Component {
 
                       <Route exact path="/viewsingleconductor" component={ViewSingleConductor}/>
                       <Route exact path="/test" component={test}/>
+
+                      {/* Report Generation */}
+                      <Route exact path = "/reportgeneration"  component ={DatePic}/>
                   </Switch>
               </Router>
           

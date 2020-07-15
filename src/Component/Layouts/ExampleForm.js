@@ -20,12 +20,13 @@ export default class ExampleForm extends React.Component {
         this.onChangeBusRoute = this.onChangeBusRoute.bind(this);
         this.onChangeBusCapacity = this.onChangeBusCapacity.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        // this.onChange = this.onChange.bind(this);
 
          // Setting up state
         this.state= {
-            busNo: '',
-            busRoute: '',
-            busCapacity: '',
+            busNo: "",
+            busRoute: "",
+            busCapacity: "",
         }
     }
 
@@ -33,6 +34,7 @@ export default class ExampleForm extends React.Component {
         this.setState({
             busNo:e.target.value
         });
+        console.log(e.target.value)
     }
     onChangeBusRoute(e) {
         this.setState({
@@ -44,6 +46,12 @@ export default class ExampleForm extends React.Component {
             busCapacity:e.target.value
         });
     }
+
+    // onChange(event) {
+    //     const { name, value, type, checked } = event.target
+
+    //     type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]: value })
+    // }
 
     onSubmit(e) {
         e.preventDefault();
@@ -59,7 +67,15 @@ export default class ExampleForm extends React.Component {
             busCapacity: this.state.busCapacity
         }
 
-        axios.post('http://localhost:3000/eBus/api/register', newBus)
+        // const data = {
+        //     busNo: "GL2322",
+        //     busRoute: "MAharagama-Galle",
+        //     busCapacity: 45
+        // }
+
+        // console.log(data)
+
+        axios.post('http://localhost:4000/api/bus/register', newBus)
              .then(res => console.log(res.data));
 
         this.setState({
@@ -68,6 +84,10 @@ export default class ExampleForm extends React.Component {
             busCapacity: ''
         })
     }
+
+    // componentDidMount(){
+    //     console.log("Hello")
+    // }
 
     render() {
         return(
@@ -103,6 +123,7 @@ export default class ExampleForm extends React.Component {
                             name="busNumber"
                             value={this.state.busNo}
                             onChange={this.onChangeBusNumber}
+                            // onChange={this.onChange}
                             autoFocus
                         />
 
@@ -116,6 +137,7 @@ export default class ExampleForm extends React.Component {
                             name="busRoute"
                             value={this.state.busRoute}
                             onChange={this.onChangeBusRoute} 
+                            // onChange={this.onChange} 
                         />
 
                         <TextField
@@ -127,7 +149,8 @@ export default class ExampleForm extends React.Component {
                             label="Bus Capacity"
                             name="busCapacity"
                             value={this.state.busCapacity}
-                            onChange={this.onChangeBusCapacity}      
+                            onChange={this.onChangeBusCapacity} 
+                            // onChange={this.onChange}        
                         />
                         
                         

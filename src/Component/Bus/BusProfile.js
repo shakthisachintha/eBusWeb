@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
@@ -13,12 +11,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-// import FormDialog from './../Layouts/DialogForm';
+import ResponsiveDrawer from './../sidebar/siebardup';
 
 const useStyles = makeStyles((theme) =>({
     appBar: {
@@ -94,17 +87,18 @@ export default function BusProfile() {
     };
 
     return(
-        <div className={classes.body}>
-            <AppBar position="static" className={classes.appBar}>
+        <div>
+            <ResponsiveDrawer/>
+            {/* <AppBar position="static" className={classes.appBar}>
                 <Toolbar>
                 {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                     <MenuIcon />
                 </IconButton> */}
-                <Typography variant="h4" className={classes.title}>
-                    eBus | Dashboard
+                {/* <Typography variant="h4" className={classes.title}>
+                    eBus | 
                 </Typography>     
-                </Toolbar>
-            </AppBar>
+                </Toolbar> */}
+            {/* </AppBar> */} 
             <Box className={classes.buses}>
                 {/* <Box>
                     <Typography variant="h6" className={classes.dashBody}>
@@ -112,8 +106,8 @@ export default function BusProfile() {
                     </Typography> 
                 </Box> */}
             </Box>
-            <Container maxWidth="lg" className={classes.exampleContainer}>
-                <Grid container spacing={3}>
+            <Container maxWidth="md" className={classes.exampleContainer}>
+                <Grid container spacing={5}>
                     <Grid item xs={8}>
                         <Card className={classes.card}>
                             <CardActionArea>
@@ -164,54 +158,7 @@ export default function BusProfile() {
                                         onClick={handleClickOpen}>
                                         Update Details
                                     </Button>
-                                    <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                                      <DialogTitle id="form-dialog-title">Update Bus Details</DialogTitle>
-                                      <DialogContent>
-                                        <DialogContentText>
-                                            
-                                          </DialogContentText>
-                                                <TextField
-                                                    variant="outlined"
-                                                    margin="normal"
-                                                    required
-                                                    fullWidth
-                                                    id="busNo"
-                                                    label="Bus Number"
-                                                    name="busNo"
-                                                    autoComplete="BusNo"
-                                                    autoFocus
-                                                />
-
-                                                <TextField
-                                                    variant="outlined"
-                                                    margin="normal"
-                                                    required
-                                                    fullWidth
-                                                    id="busRoute"
-                                                    label="Bus Route"
-                                                    name="busRoute"
-                                                    autoComplete="Bus Route"    
-                                                />
-                                                <TextField
-                                                    variant="outlined"
-                                                    margin="normal"
-                                                    required
-                                                    fullWidth
-                                                    id="busCapacity"
-                                                    label="Bus Capacity"
-                                                    name="busCapacity"
-                                                    autoComplete="Bus Capacity"
-                                                />
-                                          </DialogContent>
-                                        <DialogActions>
-                                        <Button onClick={handleClose} color="primary">
-                                            Cancel
-                                        </Button>
-                                        <Button onClick={handleClose} color="primary">
-                                            Update
-                                        </Button>
-                                        </DialogActions>
-                                    </Dialog>
+                                    {/* iimport update form */}
                                 </div>
                                 <Button className={clsx(classes.button)} 
                     

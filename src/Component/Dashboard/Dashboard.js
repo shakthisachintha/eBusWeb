@@ -165,7 +165,7 @@ export default function ExampleDash() {
                             <CardActions>
                                 <Button className={clsx(classes.button)} 
                                     
-                                    variant="contained" href="/viewBuses">
+                                    variant="contained" href="/reportgeneration">
                                     {'Report'}
                                 </Button>
                             </CardActions>

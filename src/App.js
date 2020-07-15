@@ -3,8 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import SignIn from './Component/SignIn/SignIn';  
 import SignUp from './Component/SignUp/SignUp'; 
-import ForgotPassword from './Component/SignIn/ForgotPassword';
-import ResetPassword from './Component/SignIn/ResetPassword';
+import ForgotPassword from './Component/PasswordReset/ForgotPassword';
+import ResetPassword from './Component/PasswordReset/ResetPassword';
 import Dashboard from './Component/Dashboard/Dashboard'
 import PermanentDrawerLeft from './Component/sidebar/sidebar';
 import ResponsiveDrawer from './Component/sidebar/siebardup';
@@ -30,9 +30,14 @@ import Table from './Component/Layouts/Table'
 import FormDialog from './Component/Layouts/DialogForm'
 import CheckingView from './Component/Layouts/CheckingView'
 import ExampleForm from './Component/Layouts/ExampleForm'
+// import ExampleView from './Component/Layouts/ExampleView'
 
 //import ViewSingleConductor from './Component/sidebar/siebardup'
-import test from './Component/SignUp/test'; 
+import test from './Component/SignUp/test';
+
+//Report Generation
+
+import DatePic from './Component/ReportGeneration/DatePeriod';
 
 
   
@@ -60,16 +65,20 @@ class App extends Component {
                           {/* Routes for buses */}
                       <Route exact path="/busRegister" component={BusRegister}/>
                       <Route exact path="/viewBuses" component={ViewBuses}/> 
-                      
+                      <Route exact path="/busProfile" component={BusProfile}/>
+
                          {/* Routes for Sample UI */}
                       <Route exact path="/table" component ={Table}/> 
                       <Route exact path="/formDialog" component={FormDialog}/>
-                      <Route exact path="/checkView" component={CheckingView}/>
-                      <Route exact path="/busProfile" component={BusProfile}/>
+                      <Route exact path="/checkView" component={CheckingView}/>        
                       <Route exact path="/exampleform" component={ExampleForm}/>
+                      {/* <Route exact path="/exampleView" component={ExampleView}/> */}
 
                       <Route exact path="/viewsingleconductor" component={ViewSingleConductor}/>
                       <Route exact path="/test" component={test}/>
+
+                      {/* Report Generation */}
+                      <Route exact path = "/reportgeneration"  component ={DatePic}/>
                   </Switch>
               </Router>
           

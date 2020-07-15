@@ -8,11 +8,43 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
+
 export default  class UpdateBusForm extends React.Component {
 
+    constructor(props) {
+        super(props);
 
+        this.onChangeBusNumber = this.onChangeBusNumber.bind(this);
+        this.onChangeBusRoute = this.onChangeBusRoute.bind(this);
+        this.onChangeBusCapacity = this.onChangeBusCapacity.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
-    render() {
+        // Setting up state
+        this.state= {
+            busNo: "",
+            busRoute: "",
+            busCapacity: "",
+        }
+    }
+
+    onChangeBusNumber(e) {
+        this.setState({
+            busNo:e.target.value
+        });
+        console.log(e.target.value)
+    }
+    onChangeBusRoute(e) {
+        this.setState({
+            busRoute:e.target.value
+        });
+    }
+    onChangeBusCapacity(e) {
+        this.setState({
+            busCapacity:e.target.value
+        });
+    }
+
+    render() { 
         return(
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Update Bus Details</DialogTitle>

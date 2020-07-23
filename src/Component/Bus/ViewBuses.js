@@ -169,7 +169,7 @@ export default function ViewBuses() {
                   <StyledTableCell align="center">{item.busCapacity}</StyledTableCell>
                   {/* <StyledTableCell align="right">{item.busRoute}</StyledTableCell> */}
                   <StyledTableCell align="center">
-                    <Link to={"/busProfile"}>
+                    <Link to={`/busProfile/${item._id}`}>
                       <button>View</button>
                     </Link>
                   </StyledTableCell>

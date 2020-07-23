@@ -24,6 +24,7 @@ import ViewSingleConductor from './Component/Conductor/ViewConductors/ViewSingle
 import BusRegister from './Component/Bus/BusRegister'
 import ViewBuses from './Component/Bus/ViewBuses'
 import BusProfile from './Component/Bus/BusProfile'
+import UpdateBusForm from './Component/Bus/UpdateBus'
 
 // routes for testing 
 import Table from './Component/Layouts/Table'
@@ -65,7 +66,8 @@ class App extends Component {
                           {/* Routes for buses */}
                       <Route exact path="/busRegister" component={BusRegister}/>
                       <Route exact path="/viewBuses" component={ViewBuses}/> 
-                      <Route exact path="/busProfile" component={BusProfile}/>
+                      <Route exact path="/busProfile/:id" component={BusProfile}/>
+                      <Route exact path="/updateForm/:id" component={UpdateBusForm}/>
 
                          {/* Routes for Sample UI */}
                       <Route exact path="/table" component ={Table}/> 

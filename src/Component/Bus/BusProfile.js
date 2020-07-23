@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
@@ -12,6 +12,12 @@ import CardContent from '@material-ui/core/CardContent';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import ResponsiveDrawer from './../sidebar/siebardup';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import axios from 'axios'
 
 const useStyles = makeStyles((theme) =>({
     appBar: {
@@ -73,10 +79,46 @@ const useStyles = makeStyles((theme) =>({
 
 }));
 
-export default function BusProfile() {
+export default function BusProfile(props) {
     const classes = useStyles();
 
     const [open, setOpen] = React.useState(false);
+    const [data, setData] = useState([]);
+
+    console.log("one")
+    console.log(props.match.params.id)
+//     useEffect(() => {
+//         const fetchData = async () => {
+//         const result = 
+//         // await axios.post(
+//         //     // `http://localhost:4000/api/bus/${props.match.params.id}`
+//         //     "http://localhost:4000/api/bus-profile", 
+//         //     {
+//         //         id: props.match.params.id
+//         //     }
+//         // );
+//         console.log(result)
+//         console.log(result.data)
+//       setData(result.data);
+//     };
+
+//     fetchData();
+//   }, []);
+useEffect(() => {
+    // POST request using fetch inside useEffect React hook
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: props.match.params.id })
+    };
+    fetch('http://localhost:4000/api/bus/bus-profile', requestOptions)
+        .then(response => response.json())
+        .then(data => setData(data));
+
+// empty dependency array means this effect will only run once (like componentDidMount in classes)
+}, []);
+
+ const busno = data.busNo
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -86,19 +128,40 @@ export default function BusProfile() {
         setOpen(false);
     };
 
+    // update state
+    const [busNo, setBusNo] = useState("");
+    const [busRoute, setBusRoute] = useState("");
+    const [busCapacity, setBusCapacity] = useState("");
+
+    const handleUpdate = () => {
+
+        const newBus = {
+            id: data._id,
+            busNo: busNo ? busNo : data.busNo,
+            busRoute: busRoute ? busRoute : data.busRoute,
+            busCapacity: busCapacity ? busCapacity : data.busCapacity
+        }
+        console.log(newBus)
+
+        axios.post('http://localhost:4000/api/bus/update', newBus)  
+             .then(res => console.log(res.data));
+    }
+
+
+
+
+    // onChangeBusRoute(e) {
+    //     this.setState({
+    //         busRoute:e.target.value
+    //     });
+    // }
+
+    console.log(props.match.params.id)
+
+
     return(
         <div>
             <ResponsiveDrawer/>
-            {/* <AppBar position="static" className={classes.appBar}>
-                <Toolbar>
-                {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                    <MenuIcon />
-                </IconButton> */}
-                {/* <Typography variant="h4" className={classes.title}>
-                    eBus | 
-                </Typography>     
-                </Toolbar> */}
-            {/* </AppBar> */} 
             <Box className={classes.buses}>
                 {/* <Box>
                     <Typography variant="h6" className={classes.dashBody}>
@@ -120,9 +183,12 @@ export default function BusProfile() {
                                         <TextField fullWidth
                                                 id="outlined-read-only-input"
                                                 label="Bus Number"
-                                                defaultValue="GY-5412"
+                                                value={data.busNo}
                                                 InputProps={{
                                                     readOnly: true,
+                                                }}
+                                                InputLabelProps={{
+                                                    shrink: true
                                                 }}
                                                 variant="outlined"
                                                 />
@@ -131,9 +197,12 @@ export default function BusProfile() {
                                         <TextField fullWidth
                                             id="outlined-read-only-input"
                                             label="Bus Route"
-                                            defaultValue="138 Kottawa-Maharagama"
+                                            value={data.busRoute}
                                             InputProps={{
                                                 readOnly: true,
+                                            }}
+                                            InputLabelProps={{
+                                                shrink: true
                                             }}
                                             variant="outlined"
                                             />
@@ -142,9 +211,12 @@ export default function BusProfile() {
                                         <TextField fullWidth
                                             id="outlined-read-only-input"
                                             label="Bus capacity"
-                                            defaultValue="45"
+                                            value={data.busCapacity}
                                             InputProps={{
                                                 readOnly: true,
+                                            }}
+                                            InputLabelProps={{
+                                                shrink: true
                                             }}
                                             variant="outlined"
                                             />
@@ -157,8 +229,70 @@ export default function BusProfile() {
                                     <Button  variant="outlined" 
                                         onClick={handleClickOpen}>
                                         Update Details
-                                    </Button>
-                                    {/* iimport update form */}
+                                    </Button> 
+
+                                    <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                                        <form 
+                                            onSubmit={handleUpdate}
+                                        >
+                                        <DialogTitle id="form-dialog-title">Update Bus Details</DialogTitle>
+                                        <DialogContent>
+                                        <DialogContentText>
+                                            </DialogContentText>
+                                                <TextField
+                                                    variant="outlined"
+                                                    margin="normal"
+                                                    required
+                                                    fullWidth
+                                                    id="busNo"
+                                                    label="Bus Number"
+                                                    name="busNo"
+                                                    defaultValue={data.busNo}
+                                                    // value={data.busNo}
+                                                    onChange={e => setBusNo(e.target.value)}
+                                                    autoFocus
+                                                />
+
+                                                {/* dan godak iwarai habai hama field ekama update kale naththan
+                                                update karapu nathi ewata null enawaa  */}
+
+                                                <TextField
+                                                    variant="outlined"
+                                                    margin="normal"
+                                                    required
+                                                    fullWidth
+                                                    id="busRoute"
+                                                    label="Bus Route"
+                                                    name="busRoute"
+                                                    defaultValue={data.busRoute}   
+                                                    onChange={e => setBusRoute(e.target.value)}
+                                                />
+                                                <TextField
+                                                    variant="outlined"
+                                                    margin="normal"
+                                                    required
+                                                    fullWidth
+                                                    id="busCapacity"
+                                                    label="Bus Capacity"
+                                                    name="busCapacity"
+                                                    defaultValue={data.busCapacity}
+                                                    onChange={e => setBusCapacity(e.target.value)}
+                                                />
+                                            </DialogContent>
+                                        <DialogActions>
+                                        <Button onClick={handleClose} color="primary">
+                                            Cancel
+                                        </Button>
+                                        <Button 
+                                            type="submit"
+                                            color="primary"
+                                            // onClick={handleUpdate}
+                                        >
+                                            Update
+                                        </Button>
+                                        </DialogActions>
+                                        </form>
+                                    </Dialog>
                                 </div>
                                 <Button className={clsx(classes.button)} 
                     

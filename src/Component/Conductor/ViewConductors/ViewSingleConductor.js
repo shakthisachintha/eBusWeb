@@ -7,13 +7,15 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import PermanentDrawerLeft from './../../sidebar/sidebar';
-import ResponsiveDrawer from './../../sidebar/siebardup'
+import ResponsiveDrawer from './../../sidebar/siebardup';
+import { spacing } from '@material-ui/system';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#a503fc',
-    alignItems: 'center',
+    backgroundColor: 'white',
+    // alignItems: 'center',
     justifyContent: 'center',
     width: '99vw',
     height: '125vh',
@@ -24,43 +26,43 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid',
     lineHeight: 1.5,
     borderColor: '#0063cc',
-    
-    
+    paddingTop: '5%'
+
   },
   paper: {
-    
+
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-  welcome:{
-    fontFamily:'Roboto',
+  welcome: {
+    fontFamily: 'Roboto',
     textAlign: 'center',
-    fontSize:'1.8rem' 
-      
+    fontSize: '1.8rem'
+
   },
-  ebus:{
-    fontFamily:'Roboto',
+  ebus: {
+    fontFamily: 'Roboto',
     textAlign: 'center',
-    color:'white',
-    fontSize:'2.5rem'  
+    color: 'white',
+    fontSize: '2.5rem'
   },
-  
-  button:{
+
+  button: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     borderRadius: 8,
     border: 0,
     color: 'black',
-    height: 48,
-    width: "30%",
+    height: 40,
+    width: "20%",
     padding: '20px 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
-  image:{
-    height:'100px',
-    width:'150px',
+  image: {
+    height: '100px',
+    width: '150px',
     paddingTop: '10%'
-    
+
   },
   card: {
     maxWidth: '180px',
@@ -77,120 +79,45 @@ export default function ViewSingleConductor() {
 
   return (
     <Grid container className={classes.root}>
-        <ResponsiveDrawer/>
-        <Grid item xs={12} sm={6} >
-        
-            
-            <Paper style={
-              {
-                padding: '20px 50px',
-                margin: 50,
-                textAlign: 'center',
-            }}>
+      <ResponsiveDrawer />
+      <Grid item xs={12} sm={6} >
 
-            <form>
-              
-            <Typography component="h2" variant="" className={classes.welcome}>
-               Conductor Registration
+
+        <Paper style={
+          {
+            padding: '20px 50px',
+            margin: 50,
+            textAlign: 'center',
+          }}>
+
+          <form>
+
+            <Typography style={{ textAlign: 'center', fontSize: '20px' }}>
+              <div>
+                <p><b>Name:</b>&nbsp; John Steewan</p>
+                <p><b>Email:</b>&nbsp; johnsteewan1984@gmail.com</p>
+                <p><b>Address:</b>&nbsp;No.10 ,Reid Avenue, Colombo 07</p>
+                <p><b>Contact:</b>&nbsp;0776789632</p>
+              </div>
             </Typography>
-
             
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="username"
-                    label="user Name"
-                    name="username"
-                    autoComplete="User Name"
-                    autoFocus
-                />
+          </form>
 
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                    
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="nic"
-                    label="NIC Number"
-                    name="nic"
-                    autoComplete="NIC"
-                    
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="contact"
-                    label="Contact Number"
-                    name="contact"
-                    autoComplete="contact"
-                />
-
-                
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                   
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                    
-                />
-
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="address"
-                    label="Address"
-                    name="address"
-                    autoComplete="address"
-                    
-                />
-                
-                 
-                <div>
-                <Button className={clsx(classes.button)} 
+          <div>
+              <Button className={clsx(classes.button)}
                 type="submit"
                 variant="contained">
-                 {'Register'}
-                </Button>
-                </div>
-                <br></br>               
-            </form>
-         </Paper>
-        </Grid>
+                {'Update'}
+              </Button>
+
+              <Button className={clsx(classes.button)}
+                type="submit"
+                variant="contained">
+                {'Delete'}
+              </Button>   
+            </div>
+        </Paper>
+      </Grid>
     </Grid>
   );
 }

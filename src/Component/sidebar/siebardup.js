@@ -124,7 +124,7 @@ function ResponsiveDrawer(props) {
           aria-labelledby="nested-list-subheader"
           className={classes.menu}
         >
-          <Link href="/" variant="body2" underline="none">
+          <Link href="/viewBuses" variant="body2" underline="none">
               <ListItem button>
                 <ListItemText primary="Buses" />
               </ListItem>
@@ -143,7 +143,7 @@ function ResponsiveDrawer(props) {
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem button className={classes.nested}>
-              <Link href="/" variant="body2" underline="none">
+              <Link href="/reportgeneration" variant="body2" underline="none">
               <ListItem button>
                 <ListItemText primary="Generate Report" />
               </ListItem>
